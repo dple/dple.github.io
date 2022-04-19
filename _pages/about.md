@@ -8,9 +8,9 @@ redirect_from:
   - /about.html
 ---
 
-I am a Fintech Technical Researcher (Cryptographer) at the **Bank of Canada**. I am interested in bringing the gap between research and applied cryptography.  
+I am a Fintech Technical Researcher (Cryptographer) at the [Bank of Canada](https://www.bankofcanada.ca/). I am interested in bringing the gap between research and applied cryptography.  
 
-Prior, I was a Research Team Lead at **Canadian Institute for Cybersecurity**, Scientist II in the **Institute for Infocomm Research** (I2R), Agency of Science, Technology and Research (A*STAR), Singapore, Senior Security Analyst at **Underwriters Laboratories**, Research Scientist at **National University of Singapore** (NUS), Singapore, and a Postdoctoral Fellow at Algorithms research group, **University of Caen-Base Normandie**.
+Prior, I was a Research Team Lead at [Canadian Institute for Cybersecurity](https://www.unb.ca/cic/), Scientist II in the [Institute for Infocomm Research (I2R)](https://www.a-star.edu.sg/i2r), [Agency of Science, Technology and Research (A*STAR)](https://www.a-star.edu.sg/), Singapore, Senior Security Analyst at [Underwriters Laboratories](https://www.ul.com/), Research Scientist at [Temasek Labs](https://temasek-labs.nus.edu.sg/), National University of Singapore (NUS), Singapore, and a Postdoctoral Fellow at [Algorithms research group](https://www.greyc.fr/equipes/amacc/), University of Caen-Base Normandie, France.
 
 ## Professional Activities
 
