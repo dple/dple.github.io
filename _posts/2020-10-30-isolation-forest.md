@@ -40,7 +40,7 @@ df_trans_train = pd.read_csv(datapath + "/train_transaction.csv")
 df_trans_test = pd.read_csv(datapath + "/test_transaction.csv")
 ```
 
-#### Joining transactions and identity datasets:
+## Joining transactions and identity datasets
 
 ```python
 df_train = pd.merge(df_trans_train, df_iden_train, on='TransactionID', how='left',left_index=True,right_index=True)
@@ -55,7 +55,7 @@ df_train.isFraud.value_counts()
 df_train.isFraud.value_counts().plot.bar()
 ```
 
-#### Fraud Ratio
+## Fraud Ratio
 
 ![Check fraud ratio](https://miro.medium.com/max/1400/1*6EeaWP4H-07dP6MAVOarEQ.webp)
 
@@ -67,7 +67,7 @@ df_train.isnull().sum()/len(df_train)*100    # missing ratio
 
 This dataset also has high ratio of missing values, especially with features Addresses, Email, Device type, info and IDs.
 
-#### Let consider the correlation of different variables with the target variable
+## Let consider the correlation of different variables with the target variable
 
 ```python
 # Check the correlation of features with the target
@@ -86,7 +86,7 @@ plt.show()
 ![Check the correlation of variables](https://miro.medium.com/max/640/1*eMsajQYEOnWbBujvKurVlA.webp)
 
 
-#### Distribution of Log Transaction Amount
+## Distribution of Log Transaction Amount
 
 ```python
 #plot the amount feature
