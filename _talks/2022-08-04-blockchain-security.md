@@ -12,6 +12,6 @@ This talk will present an overview of security and privacy issues on blockchains
 
 [More information here](https://www.truonghekhoahoc.com/2022/)
 
-[Download slides here](http://dple.github.io/files/security-dlt.pdf)
+[Download slides here](https://dple.github.io/files/security-dlt.pdf)
 
 **Recommended citation**: Duc-Phong, Le. (2022). "Blockchain in Fintech - An Overview" <i>The 9th Vietnam Summer School of Science</i>. 

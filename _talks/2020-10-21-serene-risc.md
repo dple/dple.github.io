@@ -13,7 +13,7 @@ Facing the above issues, the generation of synthetic data is becoming a fundamen
 
 [More information here](https://konnect.serene-risc.ca/2021/05/27/synthetic-data-generation-and-evaluation/)
 
-[Download slides here](http://dple.github.io/files/SERENE-RISC-Workshop.pdf)
+[Download slides here](https://dple.github.io/files/SERENE-RISC-Workshop.pdf)
 
 **Recommended citation**: Duc-Phong, Le. (2020). "Synthetic Data Generation and Evaluation" <i>The 2020 Serene-risc Workshop on The State of Canadian Cybersecurity</i>. 
 
