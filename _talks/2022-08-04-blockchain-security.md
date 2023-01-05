@@ -2,7 +2,7 @@
 title: "Security & Privacy on Blockchains"
 collection: talks
 type: "Tutorial"
-permalink: /talks/2022-08-04-blockchain
+permalink: /talks/2022-08-04-blockchain-security-privacy
 venue: "The 9th Vietnam Summer School of Science"
 date: 2022-08-04
 location: "Quy Nhon, Vietnam"
