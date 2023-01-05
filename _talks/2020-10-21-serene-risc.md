@@ -2,7 +2,7 @@
 title: "Synthetic Data Generation and Evaluation"
 collection: talks
 type: "Talk"
-permalink: /talks/2020-10-21-talk-1
+permalink: /talks/2020-10-21-synthetic-data
 venue: "The 2020 Serene-risc Workshop on The State of Canadian Cybersecurity"
 date: 2020-10-21
 location: "Online (https://www.serene-risc.ca/en/events/workshops/2020-serene-risc-workshop)"
