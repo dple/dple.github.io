@@ -2,7 +2,7 @@
 title: "A Review of Blockchain in Fintech: Taxonomy, Challenges, and Future Directions"
 collection: publications
 permalink: /publication/2022-04-19-paper-A-Review-of-Blockchain-in-Fintech
-excerpt: 
+excerpt: 'The primary purpose of this paper is to bridge the technology gap between Blockchain and Fintech applications.'
 date: 2022-04-19
 venue: 'Crypptography'
 paperurl: 'https://www.mdpi.com/2410-387X/6/2/18'

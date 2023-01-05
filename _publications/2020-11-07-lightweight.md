@@ -2,7 +2,7 @@
 title: "Improved algebraic attacks on lightweight block ciphers"
 collection: publications
 permalink: /publication/2020-11-07-lightweight
-excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
+excerpt: 'This paper proposes improved algebraic attacks that are effective for lightweight block ciphers.'
 date: 2020-11-07
 venue: 'Journal of Cryptographic Engineering'
 paperurl: 'https://link.springer.com/article/10.1007/s13389-020-00237-4'

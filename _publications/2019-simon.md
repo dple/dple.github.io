@@ -2,7 +2,7 @@
 title: "Algebraic Differential Fault Analysis on SIMON Block Cipher"
 collection: publications
 permalink: /publication/2019-11-01-simon
-excerpt: 'This paper is about the number 2. The number 3 is left for future work.'
+excerpt: 'This paper presents three attacks using three different algebraic techniques combined with a differential fault attack in the bit-flip fault model to break the SIMON block cipher.'
 date: 2019-11-01
 venue: 'IEEE Transactions on Computers'
 paperurl: 'https://ieeexplore.ieee.org/abstract/document/8751983'
