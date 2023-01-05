@@ -30,7 +30,7 @@ Diffie-Hellman Key Agreement
 4. Alice computes B<sup>a</sup>, Bob computes A<sup>b</sup>;
 5. As B<sup>a</sup> = A<sup>b</sup> = g<sup>ab</sup>, Alice and Bob had the same value, so-called K, and can use that shared secret as the session key to encrypt/decrypt exchanged information between them.
 
-![Diffie-Hellman Key Exchange](images/dh.webp) (Source: Wikipedia)
+![Diffie-Hellman Key Exchange](https://commons.wikimedia.org/wiki/Category:Diffie-Hellman_key_exchange#/media/File:Diffie-Hellman-Schl%C3%BCsselaustausch.svg)
 
 
 
@@ -70,7 +70,7 @@ The first possible attack against the naïve protocol is the Man-In-The-Middle a
 - Mallory in the middle computes two keys K<sub>A</sub> = A<sup>m</sup> = g<sup>am</sup> and K<sub>B</sub> = B<sup>m</sup> = g<sup>bm</sup>;
 - Mallory is now able to decrypt messages from both Alice and Bob, perform any modifications, re-encrypt, and forward them to the next party.
 
-[Man-in-the-Middle attack](images/mitm.webp) (Source: Wikipedia)
+![Man-in-the-Middle attack](https://upload.wikimedia.org/wikipedia/commons/5/50/Man-in-the-middle_attack_of_Diffie-Hellman_key_agreement.svg)
 
 Authenticated Diffie-Hellman Protocol
 ------
