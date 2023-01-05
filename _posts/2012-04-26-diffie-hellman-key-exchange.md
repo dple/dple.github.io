@@ -41,7 +41,6 @@ Java supported the Diffie-Hellman key agreement protocol in the package javax.cr
 For example, the following code gets an instance of the Diffie-Hellman key agreement protocol with elliptic curves as defined in RFC 7748, including X25519 and X448 (Edwards curves providing 128 and 224-bit security levels).
 
 ```java
-// Diffie-Hellman over the curve X448
 KeyAgreement ka = KeyAgreement.getInstance("XDH");
 NamedParameterSpec params = new NamedParameterSpec("X448");
 ```
