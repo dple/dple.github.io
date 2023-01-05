@@ -12,4 +12,4 @@ This paper proposes improved algebraic attacks that are effective for lightweigh
 
 [Download paper here](http://dple.github.io/files/lightweight.pdf)
 
-Recommended citation: Sze Ling Yeo, Duc-Phong Le, Khoongming Khoo. (2010). "Improved algebraic attacks on lightweight block ciphers." <i>Journal of Cryptographic Engineering</i>. 11(1).
+**Recommended citation**: Sze Ling Yeo, Duc-Phong Le, Khoongming Khoo. (2010). "Improved algebraic attacks on lightweight block ciphers." <i>Journal of Cryptographic Engineering</i>. 11(1).

@@ -12,4 +12,4 @@ The primary purpose of this paper is to bridge the technology gap between Blockc
 
 [Download paper here](https://www.mdpi.com/2410-387X/6/2/18/pdf?version=1650449875)
 
-Recommended citation: Keerthi Nelaturu, Han Du, Duc-Phong Le (2022). "A Review of Blockchain in Fintech: Taxonomy, Challenges, and Future Directions." <i>Cryptography</i>. 6(2).
+**Recommended citation**: Keerthi Nelaturu, Han Du, Duc-Phong Le (2022). "A Review of Blockchain in Fintech: Taxonomy, Challenges, and Future Directions." <i>Cryptography</i>. 6(2).

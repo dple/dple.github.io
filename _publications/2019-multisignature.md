@@ -12,4 +12,4 @@ A multi signature scheme allows a group of signers to produce a joint signature 
 
 [Download paper here](https://dple.github.io/files/multisignature.pdf)
 
-Recommended citation: Duc-Phong Le, Guomin Yang, Ali Ghorbani (2019). "A new multisignature scheme with public key aggregation for blockchain." <i>2019 17th International Conference on Privacy, Security and Trust (PST)</i>.
+**Recommended citation**: Duc-Phong Le, Guomin Yang, Ali Ghorbani (2019). "A new multisignature scheme with public key aggregation for blockchain." <i>2019 17th International Conference on Privacy, Security and Trust (PST)</i>.
