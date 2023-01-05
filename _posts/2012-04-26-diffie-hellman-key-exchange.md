@@ -28,7 +28,7 @@ Diffie-Hellman Key Agreement
 2. Alice chooses a secret integer a, computes A = g<sup>a</sup>, and then sends A to Bob;
 3. Bob chooses a secret integer b, computes B = g<sup>b</sup>, and then sends B to Alice;
 4. Alice computes B<sup>a</sup>, Bob computes A<sup>b</sup>;
-5. As B<sup>a<sup> = A<sup>b</sup> = g<sup>ab</sup>, Alice and Bob had the same value, so-called K, and can use that shared secret as the session key to encrypt/decrypt exchanged information between them.
+5. As B<sup>a</sup> = A<sup>b</sup> = g<sup>ab</sup>, Alice and Bob had the same value, so-called K, and can use that shared secret as the session key to encrypt/decrypt exchanged information between them.
 
 ![Diffie-Hellman Key Exchange](images/dh.webp) (Source: Wikipedia)
 
@@ -40,15 +40,15 @@ Java supported the Diffie-Hellman key agreement protocol in the package javax.cr
 
 For example, the following code gets an instance of the Diffie-Hellman key agreement protocol with elliptic curves as defined in RFC 7748, including X25519 and X448 (Edwards curves providing 128 and 224-bit security levels).
 
-``
+```java
 // Diffie-Hellman over the curve X448
 KeyAgreement ka = KeyAgreement.getInstance("XDH");
 NamedParameterSpec params = new NamedParameterSpec("X448");
-``
+```
 
 Now, you must have your own private key and Bob's public key to generate a shared key with Bob. Java class KeyAgreement supports the following functions:
 
-```
+```java
 ka.init(priv);
 ka.doPhase(pub, true);
 byte [] secret = ka.generateSecret();
@@ -71,7 +71,7 @@ The first possible attack against the naïve protocol is the Man-In-The-Middle a
 - Mallory in the middle computes two keys K<sub>A</sub> = A<sup>m</sup> = g<sup>am</sup> and K<sub>B</sub> = B<sup>m</sup> = g<sup>bm</sup>;
 - Mallory is now able to decrypt messages from both Alice and Bob, perform any modifications, re-encrypt, and forward them to the next party.
 
-![Man-in-the-Middle attack](images/mitm.webp) (Source: Wikipedia)
+[Man-in-the-Middle attack](images/mitm.webp) (Source: Wikipedia)
 
 Authenticated Diffie-Hellman Protocol
 ------
