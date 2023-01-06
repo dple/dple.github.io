@@ -11,9 +11,9 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* B.S. in Computer Science, Vietnam National University, Hanoi
+* M.S. in Computer Science, Francophone Institute for Computer Science
+* Ph.D in Computer Science, University of Pau and Adour Pays
 
 Work experience
 ======
@@ -48,7 +48,7 @@ Talks
     {% include archive-single-talk-cv.html %}
   {% endfor %}</ul>
   
-Teaching
+Libraries
 ======
   <ul>{% for post in site.teaching %}
     {% include archive-single-cv.html %}
