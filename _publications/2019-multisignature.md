@@ -4,7 +4,7 @@ collection: publications
 permalink: /publication/2019-08-27-multisignature
 excerpt: 'This paper introduces a new multisignature scheme with public key aggregation. Our scheme is proven secure under the Decisional Diffie-Hellman assumption. In addition, in the presence of rogue key attacks, the security of our scheme is proven in the plain public key model.'
 date: 2019-08-27
-venue: 'Fredericton Convention Centre'
+venue: 'The 17th International Conference on Privacy, Security and Trust (PST)'
 paperurl: 'https://ieeexplore.ieee.org/abstract/document/8949046'
 citation: 'Duc-Phong Le, Guomin Yang, Ali Ghorbani. (2019). &quot;A new multisignature scheme with public key aggregation for blockchain.&quot; <i>2019 17th International Conference on Privacy, Security and Trust (PST)</i>.'
 ---

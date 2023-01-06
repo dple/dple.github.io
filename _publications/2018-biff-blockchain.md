@@ -4,7 +4,7 @@ collection: publications
 permalink: /publication/2018-10-28-biff-iot-blockchain
 excerpt: 'In this paper, leveraging on the blockchain technology, we propose a per-missioned blockchain-based IoT forensics framework to enhance the integrity, authenticity and non-repudiation properties for the collected evidence. We formally define the system architecture, provide framework details, and propose a cryptographic-based approach to mitigate identity privacy concern.'
 date: 2018-10-28
-venue: 'Jeju, Korea (South)'
+venue: 'TENCON 2018-2018 IEEE region 10 conference'
 paperurl: 'https://ieeexplore.ieee.org/abstract/document/8650434'
 citation: 'Duc-Phong Le, Huasong Meng, Le Su, Sze Ling Yeo, Vrizlynn Thing. (2018). &quot;BIFF: A blockchain-based IoT forensics framework with identity privacy.&quot; <i>TENCON 2018-2018 IEEE region 10 conference</i>.'
 ---
