@@ -6,8 +6,5 @@ main:
   - title: "Talks"
     url: /talks/    
 
-  - title: "Crypto Libraries"
-    url: /libraries/    
-            
   - title: "Blog Posts"
     url: /year-archive/    
