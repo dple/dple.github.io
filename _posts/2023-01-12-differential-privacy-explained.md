@@ -30,6 +30,17 @@ Differential Privacy (DP) is considered a promising approach to balance between 
 
 Consider two datasets $D_1$ and $D_2$, which differ by only a single elemnet. 
 
+|  Name                   |  Salary     |
+|  ---------------------- |  ---------  |
+|  Name                   |  $90,000    |
+|  Name                   |  $90,000    |
+|  Name                   |  $90,000    |
+|  Name                   |  $90,000    |
+|  Name                   |  $90,000    |
+|  Name                   |  $90,000    |
+|  Name                   |  $90,000    |
+|  Name                   |  $90,000    |
+|  Name                   |  $90,000    |
 
 
 ## References
