@@ -27,7 +27,7 @@ Differential Privacy (DP) is considered a promising approach to balance between 
 > A randomized algorithm $\mathcal{A}$ with domain $\mathbb{N}^{\chi}$ is $(\epsilon, \delta)$-differentially private if for all subsets $\mathcal{S}$ of  $\mathrm{im} \; \mathcal{A})$ and for all $D_1, D_2 \in \mathbb{N}^{\chi}$ such that $\parallel D_1 - D_2 \parallel _1 \, \le 1:$
 > <div align="center"> $\mathrm{Pr}[\mathcal{A}(D_1) \in \mathcal{S}] \le exp(\epsilon) \cdot \mathrm{Pr}[\mathcal{A}(D_2) \in \mathcal{S}]$, </div>
 
-where $\epsilon$ is a positive real number, $\mathrm{im}$ denotes the image of $\mathcal{A}$, and $\| D_1 - D_2 \|_1 \le 1$ means sD_{1}$ and $D_{2}$ differ on a single element (i.e., the data of one person). The probability is taken over the randomness used by the algorithm. 
+where $\epsilon$ is a positive *real number*, $\mathrm{im}$ denotes the image of $\mathcal{A}$, and $\parallel D_1 - D_2 \parallel _1 \le 1$ means $D_{1}$ and $D_{2}$ differ on a single element (i.e., the data of one person). The probability is taken over the *randomness* used by the algorithm. 
 
 ### Interpretation
 Let consider a dataset of information of employees and their salaries in a company as in the below table
