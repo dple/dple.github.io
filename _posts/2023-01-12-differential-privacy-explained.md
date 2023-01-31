@@ -24,10 +24,10 @@ In this post, I am going try to provide a (mostly) *non-mathematical* descriptio
 
 Differential Privacy (DP) is considered a promising approach to balance between protecting the individuals' privacy and leveraging data for insightful analysis. The formal concept $epsilon$-differential privacy was introduced in 2006 by Microsoft researchers Cynthia Dwork, Frank McSherry, Kobbi Nissim, and Adam Smith [2] as followed:
 
-> A randomized algorithm $\mathcal{A}$ with domain $\mathbb{N}^{\chi}$ is $(\epsilon, \delta)$-differentially private if for all subsets $S$ of  $\mathrm{im} \; \mathcal{A})$ and for all $D_1, D_2 \in \mathbb{N}^{\chi}$ such that $\| D_1 - D_2 \|_1 \le 1:$
+> A randomized algorithm $\mathcal{A}$ with domain $\mathbb{N}^{\chi}$ is $(\epsilon, \delta)$-differentially private if for all subsets $S$ of  $\mathrm{im} \; \mathcal{A})$ and for all $D_1, D_2 \in \mathbb{N}^{\chi}$ such that $\parallel D_1 - D_2 \parallel _1 \le 1:$
 > <div align="center"> $\text{Pr}[\mathcal{A}(D_1) \in \mathcal{S}] \le exp(\epsilon) \cdot \text{Pr}[\mathcal{A}(D_2) \in \mathcal{S}], </div>
 
-where $\epsilon$ is a positive real number and $\mathrm{im}$ is the image of $\mathcal{A}$. The probability is taken over the randomness used by the algorithm. 
+where $\epsilon$ is a positive real number, $\mathrm{im}$ is the image of $\mathcal{A}$, and $\| D_1 - D_2 \|_1 \le 1$ means sD_{1}$ and $D_{2}$ differ on a single element (i.e., the data of one person). The probability is taken over the randomness used by the algorithm. 
 
 ### Interpretation
 Let consider a dataset of information of employees and their salaries in a company as in the below table
