@@ -29,30 +29,36 @@ Differential Privacy (DP) is considered a promising approach to balance between 
 
 where $\epsilon$ is a positive *real number*, $\mathrm{im}$ denotes the image of $\mathcal{A}$, and $\parallel D_1 - D_2 \parallel _1 \le 1$ means $D_{1}$ and $D_{2}$ differ on a single element (i.e., the data of one person). The probability is taken over the *randomness* used by the algorithm. 
 
-### Interpretation
-Let consider a dataset of information of employees and their salaries in a company as in the below table
+Basically, we need to add *noise* into queries/functions to private dataset. Dwork *et al.* formalized that amount of noise and also proposed a generalized mechanism for doing so. Prior to this work, Irit Dinur and Kobbi Nissim [3] proved that privacy could not be protected without adding some amount of noise. In addition, they showed that with a small number of queries, a hacker can reveal the entire content of a private dataset. 
 
-|  Name                   |  Salary     |
-|  ---------------------- |  ---------  |
-|  Alice                  |  $90,000    |
-|  Bob                    |  $125,000   |
-|  Charlie                |  $80,000    |
-|  Dragon                 |  $95,000    |
-|  Eve                    |  $110,000   |
-|  Floren                 |  $70,000    |
-|  Geoffery               |  $65,000    |
-|  Huff                   |  $100,000   |
-|  Kevin                  |  $150,000   |
-|  ...                    |  ...        |
-|  Zayden                 |  $130,000   |
+## A 'real world' example
+Let consider a dataset of information of employees and their salaries in a company **ABC** as in the below table
+
+| No.   |  Name                   |  Salary     |
+|       |  ---------------------- |  ---------  |
+| 1     |  Alice                  |  $90,000    |
+| 2     |  Bob                    |  $125,000   |
+| 3     |  Charlie                |  $80,000    |
+| 4     |  Dragon                 |  $95,000    |
+| 5     |  Eve                    |  $110,000   |
+| 6     |  Floren                 |  $70,000    |
+| 7     |  Geoffery               |  $65,000    |
+| 8     |  Huff                   |  $100,000   |
+| 9     |  Kevin                  |  $150,000   |
+| ...   |  ...                    |  ...        |
+| 100   |  Zayden                 |  $130,000   |
 
 
 In this example, 
-- $\mathbb{N}^{\chi}$ can be seen as the entire dataset of all nine (9) employees
-- $D_1$ and $D_2$ could be two datasets, which differ by only a single elemnet. For example $D_1$ is the set of first 8 employees and $D_2$ is the set of all 9 employees.
+- $\mathbb{N}^{\chi}$ can be seen as the entire dataset of all one hundred (100) employees.
+- $D_1$ and $D_2$ could be two datasets, which differ by only a single elemnet. For example $D_1$ is the set of first 8 employees and $D_2$ is the set of first 9 employees.
+
+Now, the company **ABC** wants to publish the average of their employees. Assuming that a requester can send a query $\mathcal{Q}$ on an arbitrary number of employees of his choice. He sends two queries on $D_1$ and $D_2$ as above, that is $\mathcal{Q}(D_1)$ and $\mathcal{Q}(D_2)$. The returned results will be $77,750 and $85,778, respectively. Based on these two average numbers, the requester learnt about the salary of Kevin, which is $150,000/year. 
+
 
 
 
 ## References
 [1] Wikipedia, [Facebook–Cambridge Analytica data scandal](https://en.wikipedia.org/wiki/Facebook%E2%80%93Cambridge_Analytica_data_scandal)
 [2] Cynthia Dwork, Frank McSherry, Kobbi Nissim, and Adam Smith, *Calibrating noise to sensitivity in private data analysis*. In Proceedings of the Third conference on Theory of Cryptography (TCC'06).
+[3] Irit Dinur and Kobbi Nissim. 2003. *Revealing information while preserving privacy*. In Proceedings of the twenty-second ACM SIGMOD-SIGACT-SIGART symposium on Principles of database systems (PODS '03).
