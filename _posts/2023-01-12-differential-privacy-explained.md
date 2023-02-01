@@ -59,6 +59,6 @@ Now, the company **ABC** wants to publish the average of their employees. Assumi
 
 
 ## References
-[1] Wikipedia, [Facebook–Cambridge Analytica data scandal](https://en.wikipedia.org/wiki/Facebook%E2%80%93Cambridge_Analytica_data_scandal)
-[2] Cynthia Dwork, Frank McSherry, Kobbi Nissim, and Adam Smith, *Calibrating noise to sensitivity in private data analysis*. In Proceedings of the Third conference on Theory of Cryptography (TCC'06).
-[3] Irit Dinur and Kobbi Nissim. 2003. *Revealing information while preserving privacy*. In Proceedings of the twenty-second ACM SIGMOD-SIGACT-SIGART symposium on Principles of database systems (PODS '03).
+1. Wikipedia, [Facebook–Cambridge Analytica data scandal](https://en.wikipedia.org/wiki/Facebook%E2%80%93Cambridge_Analytica_data_scandal)
+- Cynthia Dwork, Frank McSherry, Kobbi Nissim, and Adam Smith, *Calibrating noise to sensitivity in private data analysis*. In Proceedings of the Third conference on Theory of Cryptography (TCC'06).
+- Irit Dinur and Kobbi Nissim. 2003. *Revealing information while preserving privacy*. In Proceedings of the twenty-second ACM SIGMOD-SIGACT-SIGART symposium on Principles of database systems (PODS '03).
