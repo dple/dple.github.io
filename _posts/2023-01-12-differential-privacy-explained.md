@@ -29,7 +29,7 @@ Differential Privacy (DP) is considered a promising approach to balance between 
 
 where $\epsilon$ is a positive *real number*, $\mathrm{im}$ denotes the image of $\mathcal{A}$, and $\parallel D_1 - D_2 \parallel _1 \le 1$ means $D_{1}$ and $D_{2}$ differ on a single element (i.e., the data of one person). The probability is taken over the *randomness* used by the algorithm. 
 
-Basically, we need to add *noise* into queries/functions to private dataset. Dwork *et al.* formalized that amount of noise and also proposed a generalized mechanism for doing so. Prior to this work, Irit Dinur and Kobbi Nissim [3] proved that privacy could not be protected without adding some amount of noise. In addition, they showed that with a small number of queries, a hacker can reveal the entire content of a private dataset. 
+Basically, we need to add *noise* into queries/functions to private dataset. Dwork *et al.* formalized that amount of noise and also proposed a generalized mechanism for doing so. Prior to this work, Irit Dinur and Kobbi Nissim [3] proved that privacy could not be protected without adding some amount of noise. In addition, they showed that with a small number of *random* queries, a hacker can reveal the entire content of a private dataset. 
 
 ## A 'real world' example
 Let consider a dataset of information of employees and their salaries in a company **ABC** as in the below table
@@ -60,5 +60,5 @@ Now, the company **ABC** wants to publish the average of their employees. Assumi
 
 ## References
 1. Wikipedia, [Facebook–Cambridge Analytica data scandal](https://en.wikipedia.org/wiki/Facebook%E2%80%93Cambridge_Analytica_data_scandal)
-- Cynthia Dwork, Frank McSherry, Kobbi Nissim, and Adam Smith, *Calibrating noise to sensitivity in private data analysis*. In Proceedings of the Third conference on Theory of Cryptography (TCC'06).
-- Irit Dinur and Kobbi Nissim. 2003. *Revealing information while preserving privacy*. In Proceedings of the twenty-second ACM SIGMOD-SIGACT-SIGART symposium on Principles of database systems (PODS '03).
+2. Cynthia Dwork, Frank McSherry, Kobbi Nissim, and Adam Smith, *Calibrating noise to sensitivity in private data analysis*. In Proceedings of the Third conference on Theory of Cryptography (TCC'06).
+3. Irit Dinur and Kobbi Nissim. 2003. *Revealing information while preserving privacy*. In Proceedings of the twenty-second ACM SIGMOD-SIGACT-SIGART symposium on Principles of database systems (PODS '03).
