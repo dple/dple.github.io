@@ -59,7 +59,7 @@ In this example,
 - $\mathbb{N}^{\chi}$ can be seen as the entire dataset of all one hundred (100) employees.
 - $D_1$ and $D_2$ could be two datasets, which differ by only a single elemnet. For example $D_1$ is the set of first 8 employees and $D_2$ is the set of first 9 employees.
 
-Now, the company **ABC** wants to publish the average of their employees. Assuming that a requester can send a query $\mathcal{Q}$ on an arbitrary number of employees of his choice. He sends two queries on $D_1$ and $D_2$ as above, that is $\mathcal{Q}(D_1)$ and $\mathcal{Q}(D_2)$. The returned results will be $\$91,875$ and $\$98,333$, respectively. Based on these two average numbers, the requester learnt about the salary of Kevin, which is $\$150,000$/year. 
+Now, the company **ABC** wants to publish the average of their employees. Assuming that a requester can send a query $\mathcal{Q}$ on an arbitrary number of employees of his choice. He sends two queries on $D_1$ and $D_2$ as above, that is $\mathcal{Q}(D_1)$ and $\mathcal{Q}(D_2)$. The returned results will be $91,875$ and $98,333$, respectively. Based on these two average numbers, the requester learnt about the salary of Kevin, which is $\$150,000$/year. 
 
 Now if we add some noise to the result of queries by applying a randomized algorithm $\mathcal{A}$ on two above datasets. This would return different results for different queries, even on the same dataset. For example, if $\mathcal{A}(D_1) = 95,000$ and $\mathcal{A}(D_1) = 96,000$, the attacker may just get very little information about Kevin's salary. Even if the attacker is able to query multiple times on the two datasets above, the randomized algorithm $\mathcal{A}$ will return a new noised result for each query. 
 
