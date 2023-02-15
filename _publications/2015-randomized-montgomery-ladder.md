@@ -4,7 +4,7 @@ collection: publications
 permalink: /publication/2015-08-24-randomizing-montgomery-ladder
 excerpt: 'In this paper, we present novel randomized techniques to enhance Montgomery powering ladder. The proposed techniques increase the resistance against side-channel attacks and especially recently published correlation collision attacks in the horizontal setting. '
 date: 2015-08-24
-venue: 'Information Security Theory and Practice: 9th IFIP WG 11.2 International Conference, WISTP 2015'
+venue: 'Information Security Theory and Practice: 9th IFIP WG 11.2 International Conference (WISTP)'
 paperurl: 'https://eprint.iacr.org/2015/657.pdf'
 citation: 'Duc-Phong Le, Chik How Tan, Michael Tunstall. (2015). &quot;Randomizing the montgomery powering ladder.&quot; <i>WISTP 2015</i>.'
 ---
