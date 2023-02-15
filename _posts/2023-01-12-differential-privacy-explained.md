@@ -22,13 +22,13 @@ In this post, I am going try to provide a (mostly) *non-mathematical* descriptio
  
 ## What is Differential Privacy ?
 
-Differential Privacy (DP) is considered a promising approach to balance between protecting the individuals' privacy and leveraging data for insightful analysis. The formal concept $epsilon$-differential privacy was introduced in 2006 by Microsoft researchers Cynthia Dwork, Frank McSherry, Kobbi Nissim, and Adam Smith [2] as followed:
+Differential Privacy (DP) is considered a promising approach to balance between protecting the individuals' privacy and leveraging data for insightful analysis. The formal concept $\epsilon$-differential privacy was introduced in 2006 by Microsoft researchers Cynthia Dwork, Frank McSherry, Kobbi Nissim, and Adam Smith [2] as followed:
 
 > A randomized algorithm $\mathcal{A}$ with domain $\mathbb{N}^{\chi}$ is $(\epsilon, \delta)$-differentially private if for all subsets $\mathcal{S}$ of  $\mathrm{im} \; \mathcal{A})$ and for all $D_1, D_2 \in \mathbb{N}^{\chi}$ such that $\parallel D_1 - D_2 \parallel _1 \, \le 1:$
 >
 >$$\mathrm{Pr}[\mathcal{A}(D_1) \in \mathcal{S}] \le exp(\epsilon) \cdot \mathrm{Pr}[\mathcal{A}(D_2) \in \mathcal{S}],$$
 
-where $\epsilon$ is a positive *real number*, $\mathrm{im}$ denotes the image of $\mathcal{A}$, and $\parallel D_1 - D_2 \parallel _1 \le 1$ means $D_{1}$ and $D_{2}$ differ on a single element (i.e., the data of one person). The probability is taken over the *randomness* used by the algorithm. 
+where $\epsilon$ is a positive *real number*, $\mathrm{im}$ denotes the image of $\mathcal{A}$, and $\parallel D_1 - D_2 \parallel _1 \le 1$ means $D_1$ and $D_2$ differ on a single element (i.e., the data of one person). The probability is taken over the *randomness* used by the algorithm. 
 
 Basically, we need to add *noise* into queries/functions to private dataset. Dwork *et al.* formalized that amount of noise and also proposed a generalized mechanism for doing so. Prior to this work, Irit Dinur and Kobbi Nissim [3] proved that privacy could not be protected without adding some amount of noise. In addition, they showed that with a small number of *random* queries, a hacker can reveal the entire content of a private dataset. 
 
