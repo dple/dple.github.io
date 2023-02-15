@@ -74,7 +74,7 @@ The Laplace mechanism adds noise to the result of a query. The added value is sa
 <!---
 ![Laplace Distribution](https://real-statistics.com/wp-content/uploads/2020/01/laplace-distribution-chart.png "Laplace Probability density function")
 --->
-<img src="https://real-statistics.com/wp-content/uploads/2020/01/laplace-distribution-chart.png" /></br>
+<img src="https://real-statistics.com/wp-content/uploads/2020/01/laplace-distribution-chart.png" />
 </p>
 
 
@@ -93,7 +93,7 @@ $$\mathcal{A}(D) = \mathcal{Q}(D) + L(\mu, \beta)$$
 In [2], Dwork *et al.* showed that by applying Laplace mechanism, the privacy loss parameter $\epsilon$ will be calculated as $\Delta\mathcal{Q}/\beta$, where $\Delta\mathcal{Q}$, so-called *sensitivity*, is a constant depending on the query $\mathcal{Q}$.
 
 
-_Final notes:_ Differential Privacy is a *quantifiable* measure as with a mechanism and its parameter applied to a function (i.e., query), it is able to determine the privacy loss value $\epsilon$. </br></br>
+_Final notes:_ Differential Privacy is a *quantifiable* measure as with a mechanism and its parameter applied to a function (i.e., query), it is able to determine the privacy loss value $\epsilon$. 
 
 
 ## References
