@@ -18,8 +18,7 @@ That is the *core question* Differential Privacy is trying to resolve.
 
 To keep both sides achieving their goals, privacy-enhancing techniques (PET) could be used. They could be either cryptographic solutions such as [zero-knowledge proofs](https://en.wikipedia.org/wiki/Zero-knowledge_proof), [secure multi-party computation (SMPC)](https://en.wikipedia.org/wiki/Secure_multi-party_computation), [fully homomorphic encryption (FHE)](https://en.wikipedia.org/wiki/Homomorphic_encryption), etc., or non-cryptographic solutions such as [data anonymization](https://en.wikipedia.org/wiki/Data_anonymization), [synthetic data](https://en.wikipedia.org/wiki/Synthetic_data), [differential privacy](https://en.wikipedia.org/wiki/Differential_privacy), etc. In which, Differential Privacy (DP) is a special tool that strikes a balance between your and service provider platforms' goals. 
 
-In this post, I am going try to provide a (mostly) *non-mathematical* description of what differential privacy is and what makes it so promissing. </br>
-</br>
+In this post, I am going try to provide a (mostly) *non-mathematical* description of what differential privacy is and what makes it so promissing. 
  
 ## What is Differential Privacy ?
 
@@ -33,11 +32,9 @@ where $\epsilon$ is a positive *real number*, $\mathrm{im}$ denotes the image of
 
 Basically, we need to add *noise* into queries/functions to private dataset. Dwork *et al.* formalized that amount of noise and also proposed a generalized mechanism for doing so. Prior to this work, Irit Dinur and Kobbi Nissim [3] proved that privacy could not be protected without adding some amount of noise. In addition, they showed that with a small number of *random* queries, a hacker can reveal the entire content of a private dataset. 
 
-In Dwork *et al.* formula above, $\epsilon$ means the *privacy loss* parameter. It determines how much noise that will be added to the computation. The smaller $\epsilon$ offers the better privacy, and otherwise, the bigger $\epsilon$ the more privacy lost. Of course, the ideal value is $\epsilon = 0$, however, at such a privacy level, the published data may not be accurate and hence not useful for further analysis. On the other hand, the value of $\epsilon$ should be not too big that will lead to leak private information. A recommendation given in [4] suggested that $\epsilon$ should be approximately between 0.001 and 1. 
+In Dwork *et al.* formula above, $\epsilon$ means the *privacy loss* parameter. It determines how much noise that will be added to the computation. The smaller $\epsilon$ offers the better privacy, and otherwise, the bigger $\epsilon$ the more privacy lost. Of course, the ideal value is $\epsilon = 0$, however, at such a privacy level, the published data may not be accurate and hence not useful for further analysis. On the other hand, the value of $\epsilon$ should be not too big that will lead to leak private information. A recommendation given in [4] suggested that $\epsilon$ should be approximately between $0.001$ and $1$. 
 
 
-</br>
-</br>
 
 ## A 'real world' example
 
@@ -62,11 +59,11 @@ In this example,
 - $\mathbb{N}^{\chi}$ can be seen as the entire dataset of all one hundred (100) employees.
 - $D_1$ and $D_2$ could be two datasets, which differ by only a single elemnet. For example $D_1$ is the set of first 8 employees and $D_2$ is the set of first 9 employees.
 
-Now, the company **ABC** wants to publish the average of their employees. Assuming that a requester can send a query $\mathcal{Q}$ on an arbitrary number of employees of his choice. He sends two queries on $D_1$ and $D_2$ as above, that is $\mathcal{Q}(D_1)$ and $\mathcal{Q}(D_2)$. The returned results will be \$91,875 and \$98,333, respectively. Based on these two average numbers, the requester learnt about the salary of Kevin, which is $150,000/year. 
+Now, the company **ABC** wants to publish the average of their employees. Assuming that a requester can send a query $\mathcal{Q}$ on an arbitrary number of employees of his choice. He sends two queries on $D_1$ and $D_2$ as above, that is $\mathcal{Q}(D_1)$ and $\mathcal{Q}(D_2)$. The returned results will be $\$91,875$ and $\$98,333$, respectively. Based on these two average numbers, the requester learnt about the salary of Kevin, which is $\$150,000$/year. 
 
 Now if we add some noise to the result of queries by applying a randomized algorithm $\mathcal{A}$ on two above datasets. This would return different results for different queries, even on the same dataset. For example, if $\mathcal{A}(D_1) = 95,000$ and $\mathcal{A}(D_1) = 96,000$, the attacker may just get very little information about Kevin's salary. Even if the attacker is able to query multiple times on the two datasets above, the randomized algorithm $\mathcal{A}$ will return a new noised result for each query. 
 
-Let's connect this example to formal definition. Assume that the expected avarage salary that the company **ABC** want to publish is $100,000$. The formula $\mathrm{Pr}[\mathcal{A}(D_1) = 100,000] \le exp(\epsilon) \cdot \mathrm{Pr}[\mathcal{A}(D_2) = 100,000]$ should be hold for a pre-defined value of $\epsilon$. Let's say, the company provides a strong privacy for their employees, $\epsilon$ could be equal to $0.01$. The formula would be $\mathrm{Pr}[\mathcal{A}(D_1) = 100,000] \le 1.01 \cdot \mathrm{Pr}[\mathcal{A}(D_2) = 100,000]$, that is, the difference between two probabilities when querying $D_1$ and $D_2$ return to $100,000$ is about $1\%$, whether or not the data entry \#10 included in the data requested. In other words, the chance the attacker discover Kevin's salary increases at most by 1\%. </br></br>
+Let's connect this example to formal definition. Assume that the expected avarage salary that the company **ABC** want to publish is $100,000$. The formula $\mathrm{Pr}[\mathcal{A}(D_1) = 100,000] \le exp(\epsilon) \cdot \mathrm{Pr}[\mathcal{A}(D_2) = 100,000]$ should be hold for a pre-defined value of $\epsilon$. Let's say, the company provides a strong privacy for their employees, $\epsilon$ could be equal to $0.01$. The formula would be $\mathrm{Pr}[\mathcal{A}(D_1) = 100,000] \le 1.01 \cdot \mathrm{Pr}[\mathcal{A}(D_2) = 100,000]$, that is, the difference between two probabilities when querying $D_1$ and $D_2$ return to $100,000$ is about $1\%$, whether or not the data entry \#10 included in the data requested. In other words, the chance the attacker discover Kevin's salary increases at most by $1\%$. 
 
 
 ## The Laplace mechanism
