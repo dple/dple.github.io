@@ -90,10 +90,13 @@ So, given a query $\mathcal{Q}$, the Laplace mechanism will return a result as:
 $$\mathcal{A}(D) = \mathcal{Q}(D) + L(\mu, \beta)$$
 
 
+## DP is quantifiable
+
+_Final notes:_ Differential Privacy is a *quantifiable* measure as with a mechanism and its parameter applied to a function (i.e., query), it is able to determine the privacy loss value $\epsilon$. 
+
 In [2], Dwork *et al.* showed that by applying Laplace mechanism, the privacy loss parameter $\epsilon$ will be calculated as $\Delta\mathcal{Q}/\beta$, where $\Delta\mathcal{Q}$, so-called *sensitivity*, is a constant depending on the query $\mathcal{Q}$.
 
 
-_Final notes:_ Differential Privacy is a *quantifiable* measure as with a mechanism and its parameter applied to a function (i.e., query), it is able to determine the privacy loss value $\epsilon$. 
 
 
 ## References
