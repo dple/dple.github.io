@@ -35,6 +35,10 @@ Basically, we need to add *noise* into queries/functions to private dataset. Dwo
 In Dwork *et al.* formula above, $\epsilon$ means the *privacy loss* parameter. It determines how much noise that will be added to the computation. The smaller $\epsilon$ offers the better privacy, and otherwise, the bigger $\epsilon$ the more privacy lost. Of course, the ideal value is $\epsilon = 0$, however, at such a privacy level, the published data may not be accurate and hence not useful for further analysis. On the other hand, the value of $\epsilon$ should be not too big that will lead to leak private information. A recommendation given in [4] suggested that $\epsilon$ should be approximately between $0.001$ and $1$. 
 
 
+### Interpret the formula 
+Probability of outcome S from dataset D_1
+
+How similar the probability outcomes 
 
 ## A 'real world' example
 
@@ -90,12 +94,14 @@ So, given a query $\mathcal{Q}$, the Laplace mechanism will return a result as:
 $$\mathcal{A}(D) = \mathcal{Q}(D) + L(\mu, \beta)$$
 
 
+
 ## DP is quantifiable
 
-_Final notes:_ Differential Privacy is a *quantifiable* measure as with a mechanism and its parameter applied to a function (i.e., query), it is able to determine the privacy loss value $\epsilon$. 
+_Final notes:_ Differential Privacy is a *quantifiable* measure as with a mechanism and its parameter applied to a function (i.e., query), it is able to determine the privacy loss value $\epsilon$, which represents the privacy budget allocated to the algorithm. A smaller epsilon value implies a stronger privacy guarantee and a greater amount of noise added to the data, while a larger epsilon value implies a weaker privacy guarantee and a smaller amount of noise added to the data. 
+
+Additionally, differential privacy provides a mechanism for measuring the tradeoff between privacy and utility. Specifically, differential privacy provides a formal definition of the accuracy or quality of the output produced by a differentially private algorithm, which can be quantified using statistical measures such as mean squared error or absolute error.
 
 In [2], Dwork *et al.* showed that by applying Laplace mechanism, the privacy loss parameter $\epsilon$ will be calculated as $\Delta\mathcal{Q}/\beta$, where $\Delta\mathcal{Q}$, so-called *sensitivity*, is a constant depending on the query $\mathcal{Q}$.
-
 
 
 
