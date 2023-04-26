@@ -7,6 +7,7 @@ tags:
   - Data analysis
   - Data privacy 
   - Differential Privacy
+  - Privacy Enhancing Techniques
   - Laplace noise
   - White noise
 ---
