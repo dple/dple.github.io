@@ -45,7 +45,7 @@ Similarly to a replay attack in network security, in this context, a fraudster w
 <!---
 ![Replay Attack against Payment Systems](../images/replay-attack.jpg)
 --->
-<img src="../images/replay-attack.jpg" 
+<img src="/images/replay-attack.jpg" 
         alt="Replay attacks against payment systems" 
         width="500" 
         height="300" 
