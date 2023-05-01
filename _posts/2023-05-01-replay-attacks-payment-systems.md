@@ -7,6 +7,12 @@ tags:
   - payment schemes
   - emv framework 
   - transaction protocols
+  - chip-and-pin
+  - magstripe 
+  - mobile payment
+  - google pay
+  - weak cryptographic implementation
+  - prilex malware
 ---
 
 ## What is Replay Attack?
