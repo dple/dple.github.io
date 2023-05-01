@@ -42,9 +42,9 @@ The replay attack could be also prevented by using a Message Authentication Code
 
 Similarly to a replay attack in network security, in this context, a fraudster will try to replay a payment message (e.g., APDU or Application Protocol Data Unit in smart card transactions) captured from a victim payment card to withdraw money into his wallet/account. It can be illustrated as in the below picture:
 
-<!---
+
 ![Replay Attack against Payment Systems](../images/replay-attack.jpg)
--->
+
 <img src="../images/replay-attack.jpg" 
         alt="Replay attacks against payment systems" 
         width="500" 
