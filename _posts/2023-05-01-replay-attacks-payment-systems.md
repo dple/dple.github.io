@@ -68,7 +68,7 @@ Similarly to a replay attack in network security, in this context, a fraudster w
 <div align="center">Fig. 3: Replay attacks against Payment Systems</div>
 
 
-Diffrent from a replay attack in network security, 'transaction processor' in payment schemes is not a single server or program, it may consist of some entities, including merchant's POS terminal, acquiring bank, card network, issuing bank. The authentication and authorization processes involving more than one party are more complicated, and hence present more higher risks to replay attacks. 
+Different from a replay attack in network security, 'transaction processor' in payment schemes is not a single server or program, it may consist of some entities, including merchant's POS terminal, acquiring bank, card network, issuing bank. The authentication and authorization processes involving more than one party are more complicated, and hence present more higher risks to replay attacks. 
 
 
 This could be carried out in the following potential attack paths:
