@@ -1,7 +1,7 @@
 ---
 title: 'Fraud Transactions Detection with Isolation Forest'
 date: 2020-10-30
-permalink: /posts/2020/08/fraud-detection-isolation-forest/
+permalink: /posts/2020/10/fraud-detection-isolation-forest/
 tags:
   - Isolation Forest
   - Anomaly Detection

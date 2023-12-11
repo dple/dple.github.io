@@ -1,7 +1,7 @@
 ---
 title: 'Diffie-Hellman Key Agreement Protocol'
 date: 2022-04-26
-permalink: /posts/2012/08/diffie-hellman-key-exchange/
+permalink: /posts/2022/04/diffie-hellman-key-exchange/
 tags:
   - Diffie-Hellman
   - Key Exchange
