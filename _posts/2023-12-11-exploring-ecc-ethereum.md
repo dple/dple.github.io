@@ -45,7 +45,7 @@ As ECC provides a smaller key size compared to RSA for the same security level (
 
 ### Curve secp256k1
 
-The curve *secp256k1* is defined in Standards for Efficient Cryptography (SEC) [Certicom Research](https://www.secg.org/sec2-v2.pdf). Bitcoin and Ethereum use this curve for key generation and in the digital signature algorithm [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm). This is a Koblitz curve, that is a curve of form $y^2 = x^3 + B$, where $Bb$ is a small number. This special secp256k1 curve offers better performance in point additions and scalar multiplications. In particular, secp256k1 has the following parameters:
+The curve *secp256k1* is defined in Standards for Efficient Cryptography (SEC) [Certicom Research](https://www.secg.org/sec2-v2.pdf). Bitcoin and Ethereum use this curve for key generation and in the digital signature algorithm [ECDSA](https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm). This is a Koblitz curve, that is a curve of form $y^2 = x^3 + B$, where $B$ is a small number. This special secp256k1 curve offers better performance in point additions and scalar multiplications. In particular, secp256k1 has the following parameters:
 
 - $p$ = FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFE FFFFFC2F 
       = $2^{256} - 2^{32} - 2^9 - 2^8 - 2^7 - 2^6 - 2^4 - 1$
