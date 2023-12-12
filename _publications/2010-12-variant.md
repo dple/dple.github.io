@@ -18,7 +18,4 @@ In this article, we propose a variant of Miller's formula which gives rise to a 
 
 [Download paper here](https://hal.science/hal-01083368/document)
 
-<!---
-
 **Recommended citation**: John Boxall, Nadia El Mrabet, Fabien Laguillaumie, Duc-Phong Le. (2010). *A variant of Miller's formula and algorithm*. <i>Pairing-Based Cryptography 2010</i>.
--->
