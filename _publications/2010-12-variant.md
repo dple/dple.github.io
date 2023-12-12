@@ -2,13 +2,15 @@
 title: "A Variant of Miller Formula and Algorithm"
 collection: publications
 permalink: /publication/2010-12-pairing
-excerpt: ' In this paper, we revisit the double exponentiation countermeasure and propose faster methods to perform a double exponentiation. On the one hand, we present new heuristics for generating shorter double addition chains. On the other hand, we present an efficient double exponentiation algorithm based on a right-to-left sliding window approach.'
+excerpt: ' In this paper, ropose a variant of Miller's formula which gives rise to a generically faster algorithm for any pairing friendly curve.'
 date: 2010-12-15
 venue: 'Pairing-Based Cryptography'
-paperurl: 'https://eprint.iacr.org/2015/657.pdf'
-citation: 'John Boxall, Nadia El Mrabet, Fabien Laguillaumie, Duc-Phong Le. (2010). &quot;A variant of Miller's formula and algorithm.&quot; <i>CT-RSA 2014</i>.'
+paperurl: 'https://link.springer.com/chapter/10.1007/978-3-642-17455-1_26'
+citation: 'John Boxall, Nadia El Mrabet, Fabien Laguillaumie, Duc-Phong Le. (2010). &quot;A variant of Miller's formula and algorithm.&quot; <i>Pairing 2010</i>.'
 ---
-At CT-RSA 2009, a new principle to secure RSA (and modular/group exponentiation) against fault-analysis has been introduced by Rivain. The idea is to perform a so-called double exponentiation to compute a pair ($m^d, m^{\phi(N) − d}$) and then check that the output pair satisfies the consistency relation: $m^d, m^{\phi(N) − d} \equiv 1 \bmod N$. The author then proposed an efficient heuristic to derive an addition chain for the pair $(d, \phi(N) − d)$. In this paper, we revisit this idea and propose faster methods to perform a double exponentiation. On the one hand, we present new heuristics for generating shorter double addition chains. On the other hand, we present an efficient double exponentiation algorithm based on a right-to-left sliding window approach.
+Miller's algorithm is at the heart of all pairing-based cryptosystems since it is used in the computation of pairing such as that of Weil or Tate and their variants. Most of the optimizations of this algorithm involve elliptic curves of particular forms, or curves with even embedding degree, or having an equation of a special form. Other improvements involve a reduction of the number of iterations.
+
+In this article, we propose a variant of Miller's formula which gives rise to a generically faster algorithm for any pairing friendly curve. Concretely, it provides an improvement in cases little studied until now, in particular when denominator elimination is not available. It allows for instance the use of elliptic curve with embedding degree not of the form $2^i3^j$, and is suitable for the computation of optimal pairings. We also present a version with denominator elimination for even embedding degree. In our implementations, our variant saves between $10\%$ and $40\%$ in running time in comparison with the usual version of Miller's algorithm without any optimization.
 
 [Download paper here](https://hal.science/hal-01083368/document)
 
