@@ -2,9 +2,10 @@
 title: "A Variant of Miller Formula and Algorithm"
 collection: publications
 permalink: /publication/2010-12-pairing
+excerpt: ' In this paper, ropose a variant of Miller's formula which gives rise to a generically faster algorithm for any pairing friendly curve.'
 ---
 <!---
-excerpt: ' In this paper, ropose a variant of Miller's formula which gives rise to a generically faster algorithm for any pairing friendly curve.'
+
 date: 2010-12-15
 venue: 'Pairing-Based Cryptography'
 paperurl: 'https://link.springer.com/chapter/10.1007/978-3-642-17455-1_26'
