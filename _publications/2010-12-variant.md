@@ -1,7 +1,7 @@
 ---
-title: "On Double Exponentiation for Securing RSA against Fault Analysis"
+title: "A Variant of Miller Algorithm and its Formula"
 collection: publications
-permalink: /publication/2014-02-28-double-exponentiation
+permalink: /publication/2010-12-15-variant-miller
 excerpt: ' In this paper, we revisit the double exponentiation countermeasure and propose faster methods to perform a double exponentiation. On the one hand, we present new heuristics for generating shorter double addition chains. On the other hand, we present an efficient double exponentiation algorithm based on a right-to-left sliding window approach.'
 date: 2014-02-28
 venue: 'CT-RSA'
