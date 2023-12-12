@@ -1,7 +1,7 @@
 ---
 title: "A variant of miller’s formula and algorithm"
 collection: publications
-permalink: /publication/2010-08-pairing
+permalink: /publication/2010-12-variant-miller
 excerpt: ' In this article, we propose a variant of Miller's formula which gives rise to a generically faster algorithm for any pairing friendly curve. It allows for instance the use of elliptic curve with embedding degree not of the form $2^i3^j$, and is suitable for the computation of optimal pairings.'
 date: 2010-12-15
 venue: 'Pairing-Based Cryptography'
