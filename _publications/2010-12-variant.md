@@ -9,7 +9,7 @@ date: 2010-12-15
 venue: 'Pairing-Based Cryptography'
 paperurl: 'https://link.springer.com/chapter/10.1007/978-3-642-17455-1_26'
 #citation: 'John Boxall, Nadia El Mrabet, Fabien Laguillaumie, Duc-Phong Le. (2010). A variant of Miller's formula and algorithm. <i>Pairing 2010</i>.'
-
+citation: 'Duc-Phong Le. (2012). &quot;Speeding up Ate Pairing Computation in Affine Coordinates.&quot; <i>ICISC 2012</i>.'
 ---
 
 Miller's algorithm is at the heart of all pairing-based cryptosystems since it is used in the computation of pairing such as that of Weil or Tate and their variants. Most of the optimizations of this algorithm involve elliptic curves of particular forms, or curves with even embedding degree, or having an equation of a special form. Other improvements involve a reduction of the number of iterations.
