@@ -1,7 +1,7 @@
 ---
 title: "A Variant of Miller Formula and Algorithm"
 collection: publications
-permalink: /publication/2010-12-15-variant-miller
+permalink: /publication/2010-12-pairing
 excerpt: ' In this paper, we revisit the double exponentiation countermeasure and propose faster methods to perform a double exponentiation. On the one hand, we present new heuristics for generating shorter double addition chains. On the other hand, we present an efficient double exponentiation algorithm based on a right-to-left sliding window approach.'
 date: 2010-12-15
 venue: 'Pairing-Based Cryptography'
