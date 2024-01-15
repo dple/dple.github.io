@@ -16,7 +16,7 @@ RSA cryptosystem, introduced by Rivest, Shamir, Adleman in 1977, is the first pu
 
 The RSA encryption consists of three (3) algorithms:
 
-1. **Key Generation**
+**Key Generation**
 - Choose at random two big [safe prime numbers](https://en.wikipedia.org/wiki/Safe_and_Sophie_Germain_primes) $p$ and $q$. They must be kept secret.
 - **Public keys**: two elements: the modulus $N = p \times q$ and a small public exponent $e$, often $e = 3$ or $e = 2^{16} + 1 = 65 537$. The length of $N$ should comply to up-to-date recommandations, for example, the current recommendation is using $128$-bit security level, that is equivalent to $3072$ bits of $N$. 
 - **Private keys**: two primes $p, q$, and a private exponent $d \equiv e^{-1} \bmod \lambda(N)$, where $\lambda$ is [Carmichael's totient function](https://en.wikipedia.org/wiki/Carmichael_function). All these values must be kept secret.
@@ -24,11 +24,11 @@ The RSA encryption consists of three (3) algorithms:
 
 *Note*: The public keys can be freely distributed, as it is used for encryption or signature verification. 
 
-2. **Encryption**
+**Encryption**
 
 Given a message $m$, its ciphertext is $c = m^e \pmod N$.
 
-3. **Decryption**:
+**Decryption**:
 
 Given a ciphertext $c$, the private key's owner recover the message $m = c^d \pmod N$.
 
