@@ -11,6 +11,14 @@ tags:
   - Post-Quantum Cryptography
   
 ---
+
+In this tutorial, I will walk you through how a quantum computer can break the RSA cryptogsystem, a widely-used public key algorithm. The following points will be discussed:
+
+- Recall the RSA algorithm
+- Quantum computers and their principles
+- Shor's quantum algorithm and how it could break RSA
+
+
 # A Brief Recap of RSA Cryptosystem
 RSA cryptosystem, introduced by Rivest, Shamir, Adleman in 1977, is the first public key cryptosystem. It has been widely using in many applications in real world such as establishing a secure communication over an insecure channel, digtally signing a digital document, etc. 
 
@@ -18,7 +26,7 @@ The RSA encryption consists of three (3) algorithms:
 
 **Key Generation**
 - Choose at random two big [safe prime numbers](https://en.wikipedia.org/wiki/Safe_and_Sophie_Germain_primes) $p$ and $q$. They must be kept secret.
-- **Public keys**: two elements: the modulus $N = p \times q$ and a small public exponent $e$, often $e = 3$ or $e = 2^{16} + 1 = 65 537$. The length of $N$ should comply to up-to-date recommandations, for example, the current recommendation is using $128$-bit security level, that is equivalent to $3072$ bits of $N$. 
+- **Public keys**: two elements: the modulus $N = p \times q$ and a small public exponent $e$, often $e = 2^{16} + 1 = 65 537$. The length of $N$ should comply to up-to-date recommandations, for example, the current recommendation is using $128$-bit security level, that is equivalent to $3072$ bits of $N$. 
 - **Private keys**: two primes $p, q$, and a private exponent $d \equiv e^{-1} \bmod \lambda(N)$, where $\lambda$ is [Carmichael's totient function](https://en.wikipedia.org/wiki/Carmichael_function). All these values must be kept secret.
 
 
@@ -37,6 +45,8 @@ Given a ciphertext $c$, the private key's owner recover the message $m = c^d \pm
 RSA is secure because the difficulty of factoring the product of two large prime numbers (the modulus $N$) forms the basis of its security. Breaking RSA by factoring large numbers into their prime factors is believed computationally infeasible for sufficiently large key sizes.
 
 # What is Quantum Computer?
+It started about 40 years ago with the academic papers of Richard P. Feynman *[Simulating Physics with Computers](https://s2.smu.edu/~mitch/class/5395/papers/feynman-quantum-1981.pdf)* published on the *International Journal of Theoretical Physics* and *[Quantum Mechanical Computers](https://link.springer.com/article/10.1007/BF01886518)* published on the journal *Foundations of Physics*. In his papers, Manin scketched a theoretical foundation for quantum computing. The first paper is an abstract view on simulation of physics and what's needed to deal with simulating quantum effects. The second paper is more details about what a quantum computer or quantum algorithm would actually look like.
+
 In a nutshell, quantum computers are built by applying the principles of quantum mechanics (*superposition* and *entanglement*) to perform operations on data. While the basic unit of information in a classical computer is a bit, which can be either a $0$ or a $1$, the basic unit in quantum computers is qubits. 
 - **Superposition**: qubits can exist in multiple states simultaneously (i.e., , it can be a $0$, a $1$, or both at the same time), allowing quantum computers to perform many calculations at the same time.
 - **Entanglement**: this mechanism means the state of one qubit is directly related to the state of another, even if they are physically separated. This enables faster information transfer and processing.
@@ -63,6 +73,7 @@ Using quantum computers where we work with qubits. In a quantum state or superpo
 Let's go back to the maze problem. Think quantum computer can `think` about multiple paths simultaneously. Once measured, it will show one path that we can verify its correctness easily. If that path was returned randomly the solution is is unlikely correct. However, in quantum computers, qubits can be arranged in ways that maximize the possibility of finding the correct path. This ability is what a `quantum algorithm` will provide us. 
 
 ## Shor's Quantum Algorithm
+Based on the Feynman's quantum principles, Peter Shor developed the first quantum algorithm *[Algorithms for quantum computation: Discrete logarithms and factoring](https://ieeexplore.ieee.org/document/365700)* that can efficiently solve the factorization problem, which RSA cryptosystem relies on, and dicrete logarithm problem, which ElGamal cryptosystems and ECC relies on. 
 
 From [wikipedia](https://en.wikipedia.org/wiki/Shor%27s_algorithm):
 > The problem that we are trying to solve is: given an odd composite number $N$, find its integer factors.
