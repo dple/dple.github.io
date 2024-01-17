@@ -8,9 +8,9 @@ redirect_from:
   - /about.html
 ---
 
-I am a Fintech Technical Researcher (Cryptographer) at the [Bank of Canada](https://www.bankofcanada.ca/), working on the Central Bank Digital Currencies (CBDC) project with a focus on Security and Privacy of digital currencies. I received a Ph.D degree in applied cryptography at University of Pau et des Pays de l'Adour under the supervisor of Professor [Alban Gabillon](https://www.upf.pf/fr/alban-gabillon) and Professor [Alexis Bonnecaze](https://alexis-bonnecaze.pedaweb.univ-amu.fr/extranet/). 
+I am a Cryptographer at the Fintech team, [Bank of Canada](https://www.bankofcanada.ca/), working on the Central Bank Digital Currencies (CBDC) project with a focus on Security and Privacy of digital currencies. I received a Ph.D degree in applied cryptography at University of Pau et des Pays de l'Adour under the supervisor of Professor [Alban Gabillon](https://www.upf.pf/fr/alban-gabillon) and Professor [Alexis Bonnecaze](https://alexis-bonnecaze.pedaweb.univ-amu.fr/extranet/). 
 
-
+<!--- 
 Before joining the Bank of Canada, I was 
 
 - Research Team Lead at [Canadian Institute for Cybersecurity](https://www.unb.ca/cic/), 
@@ -19,7 +19,7 @@ Before joining the Bank of Canada, I was
 - Research Scientist at [Temasek Labs](https://temasek-labs.nus.edu.sg/), National University of Singapore (NUS), Singapore, 
 - Postdoctoral Fellow at [Algorithms research group](https://www.greyc.fr/equipes/amacc/), University of Caen-Base Normandie, France.
 
-<!--- 
+
 ## Professional Activities
 
 Here are some professional activities I am involved:
