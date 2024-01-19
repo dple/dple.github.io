@@ -102,11 +102,11 @@ we first choose a number $a$ that is [coprime](https://en.wikipedia.org/wiki/Cop
 
 The goal of the quantum subroutine of Shor's lgorithm is to find the order $r$ of the modulus $N$, which is the smallest positive integer such that:
 
-$$a^r \equiv 1 \bmod N \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;(1) $$
+$$a^r \equiv 1 \bmod N$$
 
 With the Quantum Fourier Transform aforementioned, this period $r$ can be done retively easily by a quantum computer. Then, a period function $f_a$ is defined as:
 
-$$f_a(x) = a^x \bmod N  \;\;\;\;\;\;\;\;\;(2) $$
+$$f_a(x) = a^x \bmod N $$
 
 Beacuse of (1), we have:
 
@@ -127,9 +127,9 @@ Because neither $a^{r/2} - 1$ nor $a^{r/2} + 1$ are multiple of $N$ and $a^{r/2}
 
 $d = gcd($a^{r/2} - 1$, N)$ or $d = gcd($a^{r/2} + 1$, N)$, where $d \ne 1$. The found factor $d$ will be one of two primes $p$ or $q$ in the RSA key generation. The other secret prime can be found easily due to $N$ and $d$, that is $N/d \bmod N$.
 
-<ins>Note that</ins>: In case $r$ is odd number, we restart the QFT subroutine to get the new order $r$. 
+Well, $p$ and $q$ were now recovered, that means the RSA cryptosystem was broken. 
 
-Boom, boom, $p$ and $q$ were recovered, that means the RSA cryptosystem was broken. 
+<ins>Note that</ins>: In case $r$ is odd number, we restart the QFT subroutine to get the new order $r$. 
 
 ### Complexity
 The hardest part is to solve the finding period problem. QFT can do it in a polynomial time (that will be exponential time with a classical computer), thus the entire attack is in polynomial time with a quantum computer. 
