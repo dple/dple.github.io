@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/leducphong
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://dple.github.io
+  * I am leducphong (https://keybase.io/leducphong) on keybase.
+  * I have a public key ASAKCfFEQc9hmlKJvj8No7MnqGDRv_rgL79_2eq_Ay4C0go
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01200a09f14441cf619a5289be3f0da3b327a860d1bffae02fbf7fd9eabf032e02d20a",
+      "host": "keybase.io",
+      "kid": "01200a09f14441cf619a5289be3f0da3b327a860d1bffae02fbf7fd9eabf032e02d20a",
+      "uid": "380e6f3fb5645e0d85116ef33b784119",
+      "username": "leducphong"
+    },
+    "merkle_root": {
+      "ctime": 1706110689,
+      "hash": "1de34086f435d99412dd1c73e550cc1506c38ed7cc9ba3e905c9ef1532a5f5d14ac1cde6f9b5c2435e5e845457a8b33485762c614b51684a840d45fa7a9b7963",
+      "hash_meta": "147419e304bd216af569441cc094770bfcc17637f9c83ae6bd0a09bc7c7539f8",
+      "seqno": 25391552
+    },
+    "service": {
+      "entropy": "r6aXz3SRHutIru8De5IEmHtA",
+      "hostname": "dple.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.2.5"
+  },
+  "ctime": 1706110728,
+  "expire_in": 504576000,
+  "prev": "cc46f3860f621de3a8aa2a679ea458171823e1e7be357e30df5da961332afff6",
+  "seqno": 6,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgCgnxREHPYZpSib4/DaOzJ6hg0b/64C+/f9nqvwMuAtIKp3BheWxvYWTESpcCBsQgzEbzhg9iHeOoqipnnqRYFxgj4ee+NX4w312pYTMq//bEIAdetDLZzxonfVEqdgSM48EaN5mBPuJS7smN90kVplM4AgHCo3NpZ8RAfA8zN1COyii2eey5jo3sBbc2yE7iEVdXKzPOcjCn4sSlr7jzh+FZLqbNvfa9siNDb8RFkKaDXLaPvW3hFWY9BKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIMTFkdNTXnB8pEphARhGJBJ7BbvYFmoTRqpMErRuiZRHo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/leducphong
+
+==================================================================
