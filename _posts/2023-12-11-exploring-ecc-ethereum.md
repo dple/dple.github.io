@@ -37,9 +37,9 @@ Given two points $P$ and $Q$ on $E$, the addition group law over elliptic curves
 
 ![Elliptic Curves' Group Law](https://upload.wikimedia.org/wikipedia/commons/c/c1/ECClines.svg)
 
-Group operations could be performed in the [affine coordinate system](https://en.wikipedia.org/wiki/Affine_space) (a.k.a, two dimentions $x$ and $y$) or a [projective coordinate system](https://en.wikipedia.org/wiki/Projective_plane) (a.k.a, 3 dimentions with $X$, $Y$, and $Z$), which is more efficient as it don't require any finite field inversion operations. 
+Group operations could be performed in the [affine coordinate system](https://en.wikipedia.org/wiki/Affine_space) (a.k.a, two dimentions $x$ and $y$) or a [projective coordinate system](https://en.wikipedia.org/wiki/Projective_plane) (a.k.a, 3 dimentions with $X$, $Y$, and $Z$), which is more efficient as it doesn't require any finite field inversion operations. 
 
-Given a private key $d$ (a big random number in $F_p$), its corresponding public key $PK$ (a point on the elliptic curve $E$), will be derived by raising the elliptic curve's generator $G$ by a scalar $s$, that is, $PK = d \times G$. This is a *one-way function*, that is, it is easy to calculate a public key from a private key, but it is *infeasible* to revert the private key, given its corresponding public key.  
+Given a private key $d$ (a big random number in $F_p$), its corresponding public key $PK$ (a point on the elliptic curve $E$), will be derived by raising the elliptic curve's generator $G$ by a scalar $d$, that is, $PK = d \times G$. This is a *one-way function*, that is, it is easy to calculate a public key $PK$ from a private key $d$, but it is *infeasible* to revert the private key $d$, given its corresponding public key $PK$.  
 
 As ECC provides a smaller key size compared to RSA for the same security level (e.g., the curve secp256k1 of 256-bits offers the equivalent security as the RSA-2048 bits), it is widely used in various applications, including digital signatures (i.e., ECDSA), secure key exchange protocols (i.e., ECDH), and more. Many blockchain networks, including Bitcoin and Ethereum, use elliptic curve cryptography for key management, digital signatures, and securing transactions.
 
@@ -54,6 +54,11 @@ The curve *secp256k1* is defined in Standards for Efficient Cryptography (SEC) [
 - Generator (compressed form): $G$ = 02 79BE667E F9DCBBAC 55A06295 CE870B07 029BFCDB 2DCE28D9 59F2815B 16F81798
 - Order of $G$: $n$ = FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFE BAAEDCE6 AF48A03B BFD25E8C D0364141
 - Co-factor: $h = 1$.
+
+<ins>Note that</ins>: The curve secp256k1 was inplemented in [libsecp256k1](https://github.com/bitcoin-core/secp256k1).
+<!--
+- The curve secp256k1 has co-factor of $1$ that make it unable to implement [Montgomery ladder](https://en.wikipedia.org/wiki/Elliptic_curve_point_multiplication#Montgomery_ladder)  
+-->
 
 ## What is Js-Ethereum-Cryptography?
 
