@@ -14,17 +14,29 @@ tags:
 
 Zero-Kowledge Proof (ZKP) probably is currently the hottest topic in the cryptography world. The idea of proving `something is true without revealing any information apart from the fact that this specific statement is true` is one of the most beautiful thing that cryptography could do.
 
-Although the [ZP concept](http://groups.csail.mit.edu/cis/pubs/shafi/1985-stoc.pdf) was introduced long time ago by MIT researchers Shafi Goldwasser, Silvio Micali and Charles Rackoff, it was just becoming more practical recently and yields a huge potential in Web3. 
+Although the [ZKP concept](http://groups.csail.mit.edu/cis/pubs/shafi/1985-stoc.pdf) was introduced long time ago by MIT researchers Shafi Goldwasser, Silvio Micali and Charles Rackoff, it was just getting more attention to practical applications recently and yields a huge potential in Web3. 
 
-From my experience, I found that it is hard to understand Zero-knowledge through academic papers. If you want, I think the most comprehensive explanation trying to illustrate this concept was probably written by Matthew Green in his blog and and [Youtube video] by Avi Wigderson:
+From my experience, I found that it is hard to understand Zero-knowledge through academic papers. If you want, I think the most comprehensive explanation trying to illustrate this concept was probably written by Matthew Green in his blog and and the Youtube video by Avi Wigderson:
 
 - [Zero Knowledge Proofs: An illustrated primer](https://blog.cryptographyengineering.com/2014/11/27/zero-knowledge-proofs-illustrated-primer/), written by Matthew Green.
 - [Zero Knowledge Proof - Numberphile](https://www.youtube.com/watch?v=5ovdoxnfFVc&ab_channel=Numberphile2), given by Avi Wigderson.
 
-Then, there are very good video lectures that summarize the development of zero-knowledge proof schemes:
+After getting a sense of what is zero knowledge proof, you then can go to very good following video lectures that summarize the development of zero-knowledge proof schemes and explain this concept in :
 
-- [Bilinear Pairings-based Zero-Knowledge Proofs](https://www.youtube.com/watch?v=X-z3JYlFdzs&ab_channel=ZKProofStandards), given by Jens Groth.
+
+- [Introduction to Zero Knowledge Interactive Proofs](https://youtube.com/playlist?list=PLS01nW3RtgorR09s4cIz3aFylYCrk8fv0&si=77NRiOm7pkLk4OeX), given by Shafi Goldwasser. 
 - [Overview of Modern SNARK Constructions](https://www.youtube.com/watch?v=bGEXYpt3sj0&ab_channel=Blockchain-Web3MOOCs), given by Dan Boneh. 
+- [Bilinear Pairings-based Zero-Knowledge Proofs](https://www.youtube.com/watch?v=X-z3JYlFdzs&ab_channel=ZKProofStandards), given by Jens Groth.
+
+Then, there are online resources that will help you better understanding how to transform a theoretical ZKP idea into a ZKP program:
+
+- [The RareSkills Book of Zero Knowledge](https://www.rareskills.io/zk-book)
+
+Circom and Halo2 are probably the most popular ZK languagues. Their documentation are in the following links:
+
+- [Circom 2 Documentation](https://docs.circom.io)
+- [The Halo2 book](https://zcash.github.io/halo2)
+
 
 
 
