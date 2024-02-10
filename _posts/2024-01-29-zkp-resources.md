@@ -31,10 +31,10 @@ That is probably enough to get start with ZKP from theory. Recently, when you he
 
 - [The RareSkills Book of Zero Knowledge](https://www.rareskills.io/zk-book)
 - [Zero-Knowledge Proofs MOOC](https://www.youtube.com/@blockchain-web3moocs635#)
-- [0xPARC](https://learn.0xparc.org/): a fruitful resources introducing the use of Circom and halo2.
 
 Circom and Halo2 are probably the most popular ZK languagues. Their documentation are in the following links:
 
 - [Step-by-step: how to implement and deploy a Circom's circuit](https://docs.circom.io/)
 - [The Halo2 book](https://zcash.github.io/halo2), by ZCash
+- [0xPARC](https://learn.0xparc.org/): a fruitful resources introducing the use of Circom and halo2.
 
