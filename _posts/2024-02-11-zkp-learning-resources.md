@@ -1,7 +1,7 @@
 ---
-title: 'ZKP Learning Resources (a learning path)'
-date: 2024-01-29
-permalink: /posts/2024/1/zero-knowledge-proof-resources/
+title: 'Zero-Knowledge Proof Learning Resources (a learning path)'
+date: 2024-02-11
+permalink: /posts/2024/2/zero-knowledge-proof-resources/
 tags:
   - Zero-Knowledge Proof
   - zk-SNARK
