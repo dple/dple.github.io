@@ -14,6 +14,7 @@ tags:
 
 Zero-knowledge proof (ZKP) probably is currently the hottest topic in the cryptography world. The idea of proving that `something is true without revealing any information apart from the fact that this specific statement is true` is one of the most beautiful things that cryptography could do.
 
+
 Although the [ZKP concept](http://groups.csail.mit.edu/cis/pubs/shafi/1985-stoc.pdf) was introduced a long time ago by MIT researchers Shafi Goldwasser, Silvio Micali, and Charles Rackoff, it was just getting more attention to practical applications recently and yields a huge potential in Web3. 
 
 From my experience, I found that it is hard to understand zero-knowledge through academic papers. If you want, I think the most comprehensive explanation trying to illustrate this concept was probably written by Matthew Green in his blog and and YouTube video by Avi Wigderson:
