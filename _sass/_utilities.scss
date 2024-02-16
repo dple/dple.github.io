@@ -186,6 +186,11 @@ body:hover .visually-hidden button {
     color: #000;
   }
 
+  .fa-bluesky,
+  .fa-bluesky-square {
+    color: $bluesky-color;
+  }
+
   .fa-behance,
   .fa-behance-square {
     color: $behance-color;
@@ -223,6 +228,11 @@ body:hover .visually-hidden button {
     color: $instagram-color;
   }
 
+  .fa-kaggle,
+  .fa-kaggle-square {
+    color: $kaggle-color;
+  }
+
   .fa-lastfm,
   .fa-lastfm-square {
     color: $lastfm-color;
@@ -231,6 +241,16 @@ body:hover .visually-hidden button {
   .fa-linkedin,
   .fa-linkedin-square {
     color: $linkedin-color;
+  }
+
+  .fa-mastodon,
+  .fa-mastodon-square {
+    color: $mastodon-color;
+  }
+
+  .ai-orcid,
+  .ai-orcid-square {
+    color: $orcid-color;
   }
 
   .fa-pinterest,
