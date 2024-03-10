@@ -108,7 +108,7 @@ With the Quantum Fourier Transform aforementioned, this period $r$ can be done r
 
 $$f_a(x) = a^x \bmod N $$
 
-Beacuse of (1), we have:
+Because of (1), we have:
 
 $$f_a(x + r) = a^{x + r} = a^x \times a^r = f_a(x) \times f_a(r) = f_a(x),$$
 
