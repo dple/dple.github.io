@@ -91,14 +91,14 @@ $$f(x) = f(x + r),$$
 for all $x$ in the domain of $f(x)$, and $r$ will be called a _period_ of the function $f(x)$. 
 
 ### Finding period
-Shor applied a _quantum Fourier transform_ (QFT) to find the period $r$. A classical computer can also find a period using the Fourier transform, however it will be generally computationally intensive. The _key point_ in Shor's quantum Fourier transform is that it operates on _quantum states_ corresponding to different frequency components. Then, due to the principles of quantum superposition, the algorithm is able to process all possible frequencies simultaneously. This parallelism provides the potential exponential speedup over the classical Fourier transform. 
+Shor applied a [_quantum Fourier transform_](https://en.wikipedia.org/wiki/Quantum_Fourier_transform) (QFT) to find the period $r$. A classical computer can also find a period using the Fourier transform, however it will be generally computationally intensive. The _key point_ in Shor's quantum Fourier transform is that it operates on _quantum states_ corresponding to different frequency components. Then, due to the principles of quantum superposition, the algorithm is able to process all possible frequencies simultaneously. This parallelism provides the potential exponential speedup over the classical Fourier transform. 
 
 Now, with a quantum computer, we know that the QFT can find a period of a function effectively. Let's see how it will be applied in breaking the RSA cryptosystem.
 
 
 ### Quantum Part
 
-we first choose a number $a$ that is [coprime](https://en.wikipedia.org/wiki/Coprime_integers) with the modulus $N$ (i.e., no common factors with $N$ or $gcd(a, N) = 1$). To check if $a$ and $N$ are coprimes or not, we can use the [Euclidean algorithm] (https://en.wikipedia.org/wiki/Euclidean_algorithm). 
+We first choose a number $a$ that is [coprime](https://en.wikipedia.org/wiki/Coprime_integers) with the modulus $N$ (i.e., no common factors with $N$ or $gcd(a, N) = 1$). To check if $a$ and $N$ are coprimes or not, we can use the [Euclidean algorithm](https://en.wikipedia.org/wiki/Euclidean_algorithm). 
 
 The goal of the quantum subroutine of Shor's lgorithm is to find the order $r$ of the modulus $N$, which is the smallest positive integer such that:
 
