@@ -125,7 +125,7 @@ $$(a^{r/2} - 1)(a^{r/2} + 1) \bmod N = 0.$$
 
 Because neither $a^{r/2} - 1$ nor $a^{r/2} + 1$ are multiple of $N$ and $a^{r/2} - 1 \equiv 0 \bmod N$ (as it would contradictorily imply that $r/2$ would be the order of $a$, which was already $r$). Thus, either $a^{r/2} - 1$ or $a^{r/2} + 1$ have a non-trivial common factor with $N$. This factor can be relatively easily calculate using the Euclidean algorithm:
 
-$d = gcd($a^{r/2} - 1$, N)$ or $d = gcd($a^{r/2} + 1$, N)$, where $d \ne 1$. The found factor $d$ will be one of two primes $p$ or $q$ in the RSA key generation. The other secret prime can be found easily due to $N$ and $d$, that is $N/d \bmod N$.
+$d = gcd(a^{r/2} - 1, N)$ or $d = gcd(a^{r/2} + 1, N)$, where $d \ne 1$. The found factor $d$ will be one of two primes $p$ or $q$ in the RSA key generation. The other secret prime can be found easily due to $N$ and $d$, that is $N/d \bmod N$.
 
 Well, $p$ and $q$ were now recovered, that means the RSA cryptosystem was broken. 
 
