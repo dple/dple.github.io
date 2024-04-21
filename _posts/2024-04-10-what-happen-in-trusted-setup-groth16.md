@@ -1,6 +1,6 @@
 ---
 title: 'What happens in the trusted setup phase of the Groth16 protocol'
-date: 2024-02-11
+date: 2024-04-21
 permalink: /posts/2024/4/trusted-setup-groth16/
 tags:
   - Groth16
