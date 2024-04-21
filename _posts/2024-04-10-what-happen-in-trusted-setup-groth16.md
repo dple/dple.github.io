@@ -16,14 +16,14 @@ tags:
 Groth16, probably the most wide-used zk-SNARK (Zero-Knowledge Succinct Non-Interactive Arguments of Knowledge) on blockchains, was introduced by Jens Groth at Eurocrypt 2016 (*that's why it is named groth16*). The paper, entitled `On the Size of Pairing-Based Non-interactive Arguments`, could be on [eprint/2016/260](https://eprint.iacr.org/2016/260.pdf).
 
 Groth16 is based on R1CS (*Rank One Constraint Systems*) arithmetization. While its proof consists of only 3 elliptic curve poinsts, defined in the base filed $G_1$, the verification is also fast with only 3 pairing computations. Think if you implement the protocol with the [BN curve](https://eprint.iacr.org/2005/133.pdf) for $128$-bit security level, the total size of 3 points in the proofs is about $200$ bytes ($3 \times 2 \times 254$ bits, each point represented by two 254-bit finite field elements). 
-The below table compares it with other zk-SNARKs. 
+The below table was shown in the lecture [ZKP MOOC Lecture 2: Overview of Modern SNARK Constructions](https://youtu.be/9XOi_iEtTt8?si=oDw7Ifhgznex3d72) comparing Groth16 to other zk-SNARKs. 
 
-|        | Setup | Size of proof | Proving time | Verifier time | Post-quantum |
+|        | Size of proof | Verifier time | Setup | Post-quantum |
 | ------ | --------------------- | ------------ | ------------- | ------------ |
-| Groth16 | ~ 200 bytes |       | ~ 1.5 ms | trusted per circuit (1) | No | 
-| Plonk | ~ 400 bytes |       | ~ 3 ms | universal trusted setup (2) | No | 
-| Bulletproofs | ~ 1.5 Kbytes |       | ~ 3 s | transparent (3) | No | 
-| zk-STARK | ~ 100 Kbytes |       | ~ 10 ms | transparent |  | 
+| Groth16 | ~ 200 bytes ($\mathcal{O}_{\lambda}(1)$)| ~ 1.5 ms ($\mathcal{O}_{\lambda}(1)$) | Trusted per circuit (1) | No | 
+| Plonk | ~ 400 bytes ($\mathcal{O}_{\lambda}(1)$) | ~ 3 ms  ($\mathcal{O}_{\lambda}(1)$)| Universal trusted setup (2) | No | 
+| Bulletproofs | ~ 1.5 Kbytes ($\mathcal{O}_{\lambda}(log \|C\|)$) | ~ 3 s  ($\mathcal{O}_{\lambda}(\|C\|)$)| Transparent (3) | No | 
+| zk-STARK | ~ 100 Kbytes  ($\mathcal{O}_{\lambda}(log^2 \|C\|)$) | ~ 10 ms  ($\mathcal{O}_{\lambda}(log^2 \|C\|)$)| Transparent | Yes | 
 
 (1) Trusted per circuit requires the setup phase to run for every individual circuits, i.e., generating a Common Reference String (CRS) for one circuit; (2) Universal trusted setup runs only one time for all circuits; (3) Transparent requires nothing to setup.  
 
@@ -38,14 +38,22 @@ The trusted setup of the Groth16 protocol could be found in the page #17 of his 
 
 <img src="http://dple.github.io/images/groth16setup.png" 
   alt="Trusted setup in the Groth16 protocol" 
-  width="1000" 
-  height="300" 
+  width="900" 
+  height="270" 
   style="display: block; margin: 0 auto" />
 
 
 ### Universal Setup
 
-Assume that you are working with an elliptic curve $E$, and its generator $G$, i.e., $[p]G = \bf 1$.  This phase of setup will generate a random number $\tau$ and its powers $[\tau^0]G, [\tau^1]G, [\tau^2]G, ..., [\tau^d]G$. These values could be used for any circuits. 
+Assume that you are working with a group of points of order $p$ on an elliptic curve $E$ defined over a finite field $F_q$, and its generator $G$, i.e., $[p]G = \mathcal{0}$. This phase of setup will generate a random number $\tau$ and its powers $[\tau^0]G, [\tau^1]G, [\tau^2]G, ..., [\tau^d]G$. These values could be used for any circuits. You should remember that $p$ and $q$ are two dictinct primes. For example, many practical ZKP systems use BN254 curve, in which: 
+
+$E: y^2 = x^3 + 3,$
+
+$q = 21888242871839275222246405745257275088696311157297823662689037894645226208583$, and 
+
+$p = 21888242871839275222246405745257275088548364400416034343698204186575808495617$
+
+The below simple python code demonstrate this phase 1 setup. 
 
 ```python
 def generate_powers_of_tau(tau, degree, point):
@@ -63,7 +71,10 @@ powers_of_tau_for_G1 = generate_powers_of_tau(tau, d, G1)
 powers_of_tau_for_G2 = generate_powers_of_tau(tau, d, G2)
 ```
 
-We need to generate powers of tau of both point $G_1$ and $G_2$. The former is a generator in the base field F_p and the later is the generator in the extension field $F_p^{k}$, where $k$ is the *embedding degree* of the elliptic curve $E$. You must be familiar with *pairing-friendly elliptic curves* to understand that concept and to know why we need powers of tau in both fields. A complete introduction of such curves could be found in the paper [A taxonomy of pairing-friendly elliptic curves](https://eprint.iacr.org/2006/372) by Freeman, Scott, and Teske. 
+As we are working with _asymmetric_ pairing, we need to generate `powers of tau` for both points $G_1$ and $G_2$. The former is a generator in the base field $F_q$ and the later is the generator in the extension field $F_{q^k}$, where $k$ is the *embedding degree* of the elliptic curve $E$. For BN254 curve, $k = 12$. You must be familiar with *pairing-friendly elliptic curves* to understand that concept and to know why we need powers of tau in both fields. Generally speaking, a (Ate) pairing $e(Q, P)$ taking two points as parameters and return an element in the extension field $F_{q^k}$, where $Q$ and $P$ are multiple of $G2$ and $G_1$, respectively. A complete introduction of such curves could be found in the paper [A taxonomy of pairing-friendly elliptic curves](https://eprint.iacr.org/2006/372) by Freeman, Scott, and Teske. 
+
+The degree $d$ is the maximum degree of a polynomial that this powers of tau ceronomy of a ZKP system will support for circuits. This number is equivalent to the maximum number of constraints of circuits. For example, [`snarkjs`](https://github.com/iden3/snarkjs) support a circuit with up to $2^{28}$ (≈256 million) constraints, so $d$ could be any number smaller than or equal to $2^{28}$.   
+
 
 <ins>**Important**</ins>: $\tau$ must be discarded after this setup phase to prevent dishonest provers from iventing fake ZK proofs without using the knowledge about the witness. Given powers of tau $[\tau]G_i, [\tau^2]G_i, ..., [\tau^d]G_i$, for $i = 1, 2$, an adversary could not recover the value of $\tau$ unless he could solve the [discrete logarithm problem](https://en.wikipedia.org/wiki/Discrete_logarithm), believed a NP-Complete problem, and hence *infeasible* to solve with the classical computers. 
 
@@ -147,12 +158,18 @@ taus_for_public_inputs, taus_for_private_inputs = \
 
 ## Trusted Setup in practical ZKP systems
 
-As mentioned above, the value of $\tau$ must be kept secret, it thus is risky if letting only a single entity to generate it. Practical ZKP systems ussually implement a MPC (Multi-Party Computation) protocol for [powers of tau cerenomy](https://medium.com/coinmonks/announcing-the-perpetual-powers-of-tau-ceremony-to-benefit-all-zk-snark-projects-c3da86af8377).  
+As mentioned above, the value of $\tau$ must be kept secret, it thus is risky if letting only a single entity to generate it. Practical ZKP systems ussually implement a MPC (Multi-Party Computation) protocol for powers of tau. As there are many available online articles on this topic, I won't talk more about this here. If you want to understand more, go to the following links:
+
+1. [Announcing the Perpetual Powers of Tau Ceremony to benefit all zk-SNARK projects](https://medium.com/coinmonks/announcing-the-perpetual-powers-of-tau-ceremony-to-benefit-all-zk-snark-projects-c3da86af8377).  
+
+2. [Setup Ceremonies](https://zkproof.org/2021/06/30/setup-ceremonies/)
+
+3. [The Design of the Ceremony](https://electriccoin.co/blog/the-design-of-the-ceremony/)
 
 
-### Groth16 setup by snarkjs
+## Groth16 setup by snarkjs
 
-Let's see how `snarkjs` perform the setup phase:
+Let's see how [`snarkjs`](https://github.com/iden3/snarkjs) perform the trusted setup phase for the Groth16 protocol:
 
 You may need to install *snarkjs* first
 
@@ -160,21 +177,107 @@ You may need to install *snarkjs* first
 npm install -g snarkjs@latest
 ```
 
-```sh
-snarkjs powersoftau new bn128 12 ../../ptau/pot12_0000.ptau -v
-```
+
+`snarkjs` is a javascript library that can generate ZK proofs and verify them. Inputs for `snarkjs` to generate proofs are r1cs files that could be generated from [`circom`](https://github.com/iden3/circom).    
+
+
+### Start a new powers of tau ceremony
 
 ```sh
-snarkjs groth16 setup circuit.r1cs final.ptau circuit.zkey
+snarkjs ptn bn128 8 pot08_0000.ptau
 ```
 
-### 
+or, 
+
+```sh
+snarkjs powersoftau new bn128 8 pot08_0000.ptau
+```
+
+**Parameters**:
+
+- `bn128`: BN curve at 128-bit security level
+- `8`: power of 2 indicating the maximum number of permitted constraints, i.e., this ceronomy result will allow circuits with maximum $2^8$ constraints 
+- `pot08_0000.ptau`: output file 
+
+This command takes as input an elliptic curve (_snarkjs_ supports `bn128` and `bls12-381`), a number smaller than 28 (as _snarkjs_ supports upto $2^{28}$ constraints only), and will output a transcript, _i.e._, powers of tau, individually generated by yourself.  
+
+### Contribute to the ceronemy
+
+```sh
+snarkjs ptc pot08_0000.ptau pot08_0001.ptau --name="First contribution"
+```
+or, 
+
+```sh
+snarkjs powersoftau contribute pot08_0000.ptau pot08_0001.ptau --name="First contribution"
+```
+
+**Parameters**:
+
+- `pot08_0000.ptau`: input file that is the transcript so far
+- `pot08_0001.ptau`: output a new transcript containing all challenges and responses that have been taken contribution so far 
+- `--name="First contribution"`: a note as you want 
 
 
-## Trusted Setup in other ZKP system
-
-### Zokrates
+As mentioned earlier, a powers of tau cerenomy should be a multi-party computation protcol, that is, contributed by a number of contributors. This command takes as input a individual contribution, then includes it with other contributions so far to return a new transcript. 
 
 
+### Per circuit setup
 
-### 
+After having lists of powers of tau, you are now going to setup transcript for a specific circuit you have. 
+
+#### Phase 2 preparation 
+
+```sh
+snarkjs pt2 pot08_0001.ptau pot08_final.ptau
+```
+or, 
+```sh
+snarkjs powersoftau prepare phase2 pot08_0001.ptau pot08_final.ptau
+```
+
+**Parameters**:
+
+- `pot08_0001.ptau`: input file that is the transcript so far
+- `pot08_final.ptau`: output a new transcript adding $\alpha$ and $\beta$ values  
+
+
+This step setups random values $\alpha$ and $\beta$ to prevent a dishonest prover from cheating as discussed above.
+
+#### Setup proving and verification keys 
+
+Assume that you implemented a circuit and compiled it to get a _r1cs_ file. If not, _Circom_ can help with that. These links will guide you how to [write](https://docs.circom.io/getting-started/writing-circuits/) and [compile](https://docs.circom.io/getting-started/compiling-circuits/) a circuit.
+
+Assume your circuit compiled to a r1cs file and named circuit.r1cs. Use the below command to generate proving and verification keys for this circuit.
+
+```sh
+snarkjs g16s circuit.r1cs pot08_final.ptau circuit_0000.zkey
+```
+or, 
+```sh
+snarkjs groth16 setup circuit.r1cs pot08_final.ptau circuit_0000.zkey
+```
+
+This command generates the reference `zkey` without phase 2 contributions. You then need to ontribute to the phase 2 of the ceremony:
+
+```sh
+snarkjs zkc circuit_0000.zkey circuit_0001.zkey --name="1st Contributor Name"
+```
+or, 
+```sh
+snarkjs zkey contribute circuit_0000.zkey circuit_0001.zkey --name="1st Contributor Name"
+```
+
+Finally, you export the verification key, making it accessible to verifiers:
+
+```sh
+snarkjs zkev circuit_0001.zkey verification_key.json
+```
+or, 
+
+```sh
+snarkjs zkey export verificationkey circuit_0001.zkey verification_key.json
+```
+
+## Closing
+This tutorial discussed the trusted setup phase in the Groth'16 Zero-Knowledge Proof protocol. Some `Python` code were just demonstrated the setup process. You can find the full implementation of Groth16 protocol on this [repo](https://github.com/dple/understanding-zkp/tree/master/groth16). Hope you find it fun and useful!
