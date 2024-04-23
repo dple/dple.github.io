@@ -45,7 +45,9 @@ The trusted setup of the Groth16 protocol could be found in the page #17 of his 
 
 ### Universal Setup
 
-Assume that you are working with a group of points of order $p$ on an elliptic curve $E$ defined over a finite field $F_q$, and its generator $G$, i.e., $[p]G = \mathcal{0}$. This phase of setup will generate a random number $\tau$ and its powers $[\tau^0]G, [\tau^1]G, [\tau^2]G, ..., [\tau^d]G$. These values could be used for any circuits. You should remember that $p$ and $q$ are two distinct primes. For example, many practical ZKP systems use BN254 curve, in which: 
+Assume that you are working with a group of points $\mathbb{G}$ of order $p$ on an elliptic curve $E$ defined over a finite field $F_q$, and its generator $G$, i.e., $[p]G = \mathcal{0}$. This phase of setup will generate a random number $\tau$ and its powers $[\tau^0]G, [\tau^1]G, [\tau^2]G, ..., [\tau^d]G$. These values could be used for any circuits. The reason for generating these values is for committing polynomials in the next steps of the protocol. For instance, to commit a polynomial $f(x) = \sum_{i = 0}^{d} a_i x^i$ without leaking coefficients, we will generate $com_f = f(\tau) \cdot G = a_0 + a_1 \cdot \tau \cdot G + a_2 \cdot \tau^2 \cdot G + \ldots + a_d \cdot \tau^d \cdot G \in \mathbb{G}$. This commitment is a point of $E$ (i.e., group element of $\mathbb{G}$) that could be considered as an _encrypted version_ of $f(\tau)$ as long as we could not solve the _discrete logarithm problem_. 
+
+<ins>Note</ins>: You should remember that $p$ and $q$ are two distinct primes. For example, many practical ZKP systems use BN254 curve, in which: 
 
 $E: y^2 = x^3 + 3,$
 
@@ -71,7 +73,7 @@ powers_of_tau_for_G1 = generate_powers_of_tau(tau, d, G1)
 powers_of_tau_for_G2 = generate_powers_of_tau(tau, d, G2)
 ```
 
-As we are working with _asymmetric_ pairing, we need to generate `powers of tau` for both points $G_1$ and $G_2$. The former is a generator in the base field $F_q$ and the later is the generator in the extension field $F_{q^k}$, where $k$ is the *embedding degree* of the elliptic curve $E$. For BN254 curve, $k = 12$. You must be familiar with *pairing-friendly elliptic curves* to understand that concept and to know why we need powers of tau in both fields. Generally speaking, a (Ate) pairing $e(Q, P)$ taking two points as parameters and return an element in the extension field $F_{q^k}$, where $Q$ and $P$ are multiple of $G2$ and $G_1$, respectively. A complete introduction of such curves could be found in the paper [A taxonomy of pairing-friendly elliptic curves](https://eprint.iacr.org/2006/372) by Freeman, Scott, and Teske. 
+As we are working with _asymmetric_ pairing, we need to generate `powers of tau` for both points $G_1$ and $G_2$. The former is a generator in the base field $F_q$ and the later is the generator in the extension field $F_{q^k}$, where $k$ is the *embedding degree* of the elliptic curve $E$. For BN254 curve, $k = 12$. You must be familiar with *pairing-friendly elliptic curves* to understand that concept and to know why we need powers of tau in both fields. Generally speaking, a (Ate) pairing $e(Q, P)$ taking two points as parameters and return an element in the extension field $F_{q^k}$, where $Q$ and $P$ are multiple of $G_2$ and $G_1$, respectively. A complete introduction of such curves could be found in the paper [A taxonomy of pairing-friendly elliptic curves](https://eprint.iacr.org/2006/372) by Freeman, Scott, and Teske. 
 
 The degree $d$ is the maximum degree of a polynomial that this powers of tau ceromony of a ZKP system will support for circuits. This number is equivalent to the maximum number of constraints of circuits. For example, [`snarkjs`](https://github.com/iden3/snarkjs) support a circuit with up to $2^{28}$ (≈256 million) constraints, so $d$ could be any number smaller than or equal to $2^{28}$.   
 
