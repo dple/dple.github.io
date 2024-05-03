@@ -1,6 +1,6 @@
 ---
 title: 'Understanding KZG Polynomial Commitment Scheme'
-date: 2024-04-21
+date: 2024-04-30
 permalink: /posts/2024/4/kzg-poly-commitment/
 tags:
   - Cryptographic commitment
@@ -29,8 +29,8 @@ A `functional` commitment (or commit to a function) allows you to do something m
 
 There are three main functional commitments:
 - **`Polynomial commitments`**: commit to a polynomial $f(X) \in \mathbb{F}_p[X]$. This type of commitments leads to the Groth16 and Plonk zero-knowledge proof protocols.
-- **`Vector commitments`**: commit to a vector $\vec{u} =$ $(u_1, u_2, ..., u_d)$ $\in \mathbb{F}_p^{d}[X]$, and open a cell $f_{\vec{u}}(i) = u_i$. A typical example of this is committing to a Merkle tree. This leads to the `zk-STARK` protocol. 
-- **`Inner product commitments`**: also commit to a vector $\vec{u} = (u_1, u_2, ..., u_d) \in \mathbb{F}_p^{d}[X]$, but open an inner product $f_{\vec{u}}(\vec{v}) = (\vec{u}, \vec{v})$. This leads to `bulletproof` protocol.
+- **`Vector commitments`**: commit to a vector $\vec{u} =$ $(u_1, u_2, ..., u_d) \in$ $\mathbb{F}_p^{d}[X]$, and open a cell $f_{\vec{u}}(i) = u_i$. A typical example of this is committing to a Merkle tree. This leads to the `zk-STARK` protocol. 
+- **`Inner product commitments`**: also commit to a vector $\vec{u} =$ $(u_1, u_2, ..., u_d) \in$ $\mathbb{F}_p^{d}[X]$, but open an inner product $f_{\vec{u}}(\vec{v}) = (\vec{u}, \vec{v})$. This leads to `bulletproof` protocol.
 
 ## KZG Polynomial Commitment
 Again, a trivial scheme to commit a polynomial $f(x) = a_0 + a_1 \cdot x + \cdots + a_d \cdot x^d$ is to use a suitable hash function, e.g., $com_p = H(a_0, a_1, \ldots, a_d, r)$, where $r$ is a random number sampling from $\mathbb{F}_p$. The proof of that commitment $com_p$ will be a tuple $(a_0, a_1, \ldots, a_d)$, and $r$. However, this trivial scheme does not provide the following features:
