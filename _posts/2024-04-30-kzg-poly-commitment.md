@@ -105,7 +105,7 @@ Unlike the trivial protocol showed above, the KZG commitment scheme holds the ni
 Now, let's check if the KZG polynomial commitment scheme provides two security features: `binding` and `hiding`. It is obviously the scheme can hide the original value. Before showing the KZG poly commitment is binding, let's recall the [Schwartz-Zippel lemma](https://en.wikipedia.org/wiki/Schwartz%E2%80%93Zippel_lemma):
 
 ---
-**Schwartz-Zippel Lemma:** Let $f_1, f_2 \in \mathbb{F}^{(\le d)}_p[X]$ are two polynomials. If $f_r(r) = f_2(r)$ for some random value $r \in \mathbb{F}_p$, then $f_1 = f_2$ with high probability. 
+**Schwartz-Zippel Lemma:** Let $f_1, f_2 \in \mathbb{F}^{(\le d)}_p[X]$ are two polynomials. If $f_1(r) = f_2(r)$ for some random value $r \in \mathbb{F}_p$, then $f_1 = f_2$ with high probability. 
 
 ---
 
