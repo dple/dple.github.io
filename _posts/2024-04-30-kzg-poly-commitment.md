@@ -11,7 +11,7 @@ tags:
 
 ## Cryptographic Commitments
 
-Cryptographic commitment schemes play an important role in cryptography world. They could be a building block in various protocols, such as zero-knowledge proofs, secure multi-party computation, verfifiable secret sharing, etc. The commitment schemes ensure fairness, security, and privacy in their applications.
+Cryptographic commitment schemes play an important role in cryptography world. They could be a building block in various protocols, such as _zero-knowledge proofs_, _secure multi-party computation_, _verifiable secret sharing_, etc. The commitment schemes ensure fairness, security, and privacy in their applications.
 
 A commitment scheme consists of two phases: 
 - **`Commit phase`**: the sender computes a commitment $com$ to the secret value $m$ that he chose, that is, $com = commit(m)$.
@@ -25,11 +25,11 @@ The commitment schemes could be either `non-functional` or `functional`. The for
 
 An example of `non-functional` commitment is the use of a hash function $H$ (e.g., SHA256) to commit a message $m$. We just have to hash $m$ with some randomness $r$, that is, $com = H(m, r)$, and to verify we just have to rehash the given message $m$ and the randomness $r$, then compare if the output is equal to the commitment $com$. Although this commitment scheme hides and binds the message $m$, we could not do any computation on the commitment. Real-world applications need more features than that. 
 
-A `functional` commitment (or commit to a function) allows you to do something more. For example, the KZG polynomial commitment scheme we are going to study in this post allow you to commit a polynomial $p(X)$, and after that allow you to generate a proof proving that $p(u) = v$ for two public values $(u, v)$. Morever, with its `homomorphic` property, we can further perform arithmetic operations (i.e., additiona and multiplication) over the committed values without revealing the original values. 
+A `functional` commitment (or commit to a function) allows you to do something more. For example, the KZG polynomial commitment scheme we are going to study in this post allows you to commit a polynomial $p(X)$, and after that allows you to generate a proof proving that $p(u) = v$ for two public values $(u, v)$. Moreover, with its `homomorphic` property, we can further perform arithmetic operations (i.e., _addition_ and _multiplication_) over the committed values without revealing the original values. 
 
 There are three main functional commitments:
 - **`Polynomial commitments`**: commit to a polynomial $f(X) \in \mathbb{F}_p[X]$. This type of commitments leads to the Groth16 and Plonk zero-knowledge proof protocols.
-- **`Vector commitments`**: commit to a vector $\vec{u} = (u_1, u_2, ..., u_d) \in \mathbb{F}_p^{d}[X]$, and open a cell $f_{\vec{u}}(i) = u_i$. The typical example of this is commit to a Merkle tree. This leads to the `zk-STARK` protocol. 
+- **`Vector commitments`**: commit to a vector $\vec{u} = (u_1, u_2, ..., u_d) \in \mathbb{F}_p^{d}[X]$, and open a cell $f_{\vec{u}}(i) = u_i$. A typical example of this is committing to a Merkle tree. This leads to the `zk-STARK` protocol. 
 - **`Inner product commitments`**: also commit to a vector $\vec{u} = (u_1, u_2, ..., u_d) \in \mathbb{F}_p^{d}[X]$, but open an inner product $f_{\vec{u}}(\vec{v}) = (\vec{u}, \vec{v})$. This leads to `bulletproof` protocol.
 
 ## KZG Polynomial Commitment
