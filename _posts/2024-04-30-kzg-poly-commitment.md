@@ -29,7 +29,7 @@ A `functional` commitment (or commit to a function) allows you to do something m
 
 There are three main functional commitments:
 - **`Polynomial commitments`**: commit to a polynomial $f(X) \in \mathbb{F}_p[X]$. This type of commitments leads to the Groth16 and Plonk zero-knowledge proof protocols.
-- **`Vector commitments`**: commit to a vector $\vec{u} = (u_1, u_2, ..., u_d) \in \mathbb{F}_p^{d}[X]$, and open a cell $f_{\vec{u}}(i) = u_i$. A typical example of this is committing to a Merkle tree. This leads to the `zk-STARK` protocol. 
+- **`Vector commitments`**: commit to a vector $\vec{u} =$ $(u_1, u_2, ..., u_d)$ $\in \mathbb{F}_p^{d}[X]$, and open a cell $f_{\vec{u}}(i) = u_i$. A typical example of this is committing to a Merkle tree. This leads to the `zk-STARK` protocol. 
 - **`Inner product commitments`**: also commit to a vector $\vec{u} = (u_1, u_2, ..., u_d) \in \mathbb{F}_p^{d}[X]$, but open an inner product $f_{\vec{u}}(\vec{v}) = (\vec{u}, \vec{v})$. This leads to `bulletproof` protocol.
 
 ## KZG Polynomial Commitment
