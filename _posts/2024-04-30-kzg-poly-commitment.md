@@ -28,9 +28,9 @@ An example of `non-functional` commitment is the use of a hash function $H$ (e.g
 A `functional` commitment (or commit to a function) allows you to do something more. For example, the KZG polynomial commitment scheme we are going to study in this post allows you to commit a polynomial $p(X)$, and after that allows you to generate a proof proving that $p(u) = v$ for two public values $(u, v)$. Moreover, with its `homomorphic` property, we can further perform arithmetic operations (i.e., _addition_ and _multiplication_) over the committed values without revealing the original values. 
 
 There are three main functional commitments:
-- **`Polynomial commitments`**: commit to a polynomial $f(X) \in \mathbb{F}_p[X]$. This type of commitments leads to the Groth16 and Plonk zero-knowledge proof protocols.
-- **`Vector commitments`**: commit to a vector $\vec{u} =$ $(u_1, u_2, ..., u_d) \in$ $\mathbb{F}_p^{d}[X]$, and open a cell $f_{\vec{u}}(i) = u_i$. A typical example of this is committing to a Merkle tree. This leads to the `zk-STARK` protocol. 
-- **`Inner product commitments`**: also commit to a vector $\vec{u} =$ $(u_1, u_2, ..., u_d) \in$ $\mathbb{F}_p^{d}[X]$, but open an inner product $f_{\vec{u}}(\vec{v}) = (\vec{u}, \vec{v})$. This leads to `bulletproof` protocol.
+- **`Polynomial commitments`**: commit to a polynomial $f(X) \in \mathbb{F}_p[X]$. This type of commitments leads to [Plonk](https://eprint.iacr.org/2019/953) framework for constructing zk-SNARKs..
+- **`Vector commitments`**: commit to a vector $\vec{u} =$ $(u_1, u_2, ..., u_d) \in$ $\mathbb{F}_p^{d}[X]$, and open a cell $f_{\vec{u}}(i) = u_i$. A typical example of this is committing to a Merkle tree. This leads to the [zk-STARK](https://eprint.iacr.org/2018/046.pdf) protocol. 
+- **`Inner product commitments`**: also commit to a vector $\vec{u} =$ $(u_1, u_2, ..., u_d) \in$ $\mathbb{F}_p^{d}[X]$, but open an inner product $f_{\vec{u}}(\vec{v}) = (\vec{u}, \vec{v})$. This leads to [Bulletproofs](https://eprint.iacr.org/2017/1066.pdf) protocol.
 
 ## KZG Polynomial Commitment
 Again, a trivial scheme to commit a polynomial $f(x) = a_0 + a_1 \cdot x + \cdots + a_d \cdot x^d$ is to use a suitable hash function, e.g., $com_p = H(a_0, a_1, \ldots, a_d, r)$, where $r$ is a random number sampling from $\mathbb{F}_p$. The proof of that commitment $com_p$ will be a tuple $(a_0, a_1, \ldots, a_d)$, and $r$. However, this trivial scheme does not provide the following features:
@@ -112,6 +112,6 @@ Now, let's check if the KZG polynomial commitment scheme provides two security f
 So, the Schwartz-Zippel lemma states that if two polynomials are evaluated at the same random value $r$, and return the same outputs, then one can be nearly certain that they are the same polynomial. This means that, once the prover committed a polynomial $f$, it would be _infeasible_ for him to find another polynomial that produces the same commitment $com_f$. In other words, we say the polynomial $f$ binds to the commitment $com_f$. 
 
 ## Conclusions
-KZG commitment scheme is foundational for some practical Zero-Knowledge Proof systems, including Groth16, Plonk, Halo, etc. Thus, understanding this underlying technique would help you to better understand the how ZKP systems are constructed. A full `Python code` of this post could be found in my [GitHub repo](https://github.com/dple/understanding-zkp/tree/master/Plonk). Hope you enjoy reading!
+KZG commitment scheme is an important component in the Plonk protocol. A full `Python code` of this post could be found in my [GitHub repo](https://github.com/dple/understanding-zkp/blob/master/Poly-commitment). Hope you enjoy reading!
 
 
