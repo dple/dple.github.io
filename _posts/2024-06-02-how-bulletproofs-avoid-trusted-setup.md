@@ -1,5 +1,5 @@
 ---
-title: 'How does Bulletproof ZKP avoid the trusted setup phase?'
+title: 'How do Bulletproofs avoid the trusted setup phase?'
 date: 2024-06-02
 permalink: /posts/2024/6/bulletproofs-without-trusted-setup/
 tags:
