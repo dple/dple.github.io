@@ -67,7 +67,7 @@ The Bulletproofs protocol was introduced by Benedikt Bünz, Jonathan Bootle, Dan
 
 Bulletproofs was originally known as a `range proof` protocol (proving that a value $v$ lies within a certain range without revealing the value itself, i.e., $0 \le v \le 2^n$), it was then adapted to an efficient zero-knowledge argument for arbitrary `arithmetic circuits`, a.k.a, any computations. 
 
-Bulletproofs protocol produces a proof of size $\mathcal{O}_{\lambda}(log \|C\|)$ and verification time asymtotically requires $\mathcal{O}_{\lambda}(\|C\|)$, where $C$ is the size of gates of the computation. These asymtotic complexities are actually pretty big compared to other zk-SNARKs protocols such as [Groth16](https://eprint.iacr.org/2016/260.pdf) or [Plonk-KZG](https://eprint.iacr.org/2019/953), in which those values are $\mathcal{O}_{\lambda}(1)$. 
+Bulletproofs protocol produces a proof of size $\mathcal{O}(log \|C\|)$ and verification time asymtotically requires $\mathcal{O}(\|C\|)$, where $C$ is the size of gates of the computation. These asymtotic complexities are actually pretty big compared to other zk-SNARKs protocols such as [Groth16](https://eprint.iacr.org/2016/260.pdf) or [Plonk-KZG](https://eprint.iacr.org/2019/953), in which those values are $\mathcal{O}(1)$. 
 
 ## How Bulletproofs works?
 
