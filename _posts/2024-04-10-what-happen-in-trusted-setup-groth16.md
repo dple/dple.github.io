@@ -71,6 +71,9 @@ tau = random.randint(1, p)
 powers_of_tau_for_G1 = generate_powers_of_tau(tau, d, G1)
 # Calculate tau*G2, tauˆ2*G2, ..., tauˆd*G2
 powers_of_tau_for_G2 = generate_powers_of_tau(tau, d, G2)
+# Calculate powers of tau for evaluating h(x)t(x) at tau
+t_tau = t_poly(tau)
+powers_of_tau_for_ht = [multiply(powers_of_tau_for_G1[i], int(t_tau)) for i in range(d)]
 ```
 
 As we are working with _asymmetric_ pairing, we need to generate `powers of tau` for both points $G_1$ and $G_2$. The former is a generator in the base field $F_q$ and the later is the generator in the extension field $F_{q^k}$, where $k$ is the *embedding degree* of the elliptic curve $E$. For BN254 curve, $k = 12$. You must be familiar with *pairing-friendly elliptic curves* to understand that concept and to know why we need powers of tau in both fields. Generally speaking, a (Ate) pairing $e(Q, P)$ taking two points as parameters and return an element in the extension field $F_{q^k}$, where $Q$ and $P$ are multiple of $G_2$ and $G_1$, respectively. A complete introduction of such curves could be found in the paper [A taxonomy of pairing-friendly elliptic curves](https://eprint.iacr.org/2006/372) by Freeman, Scott, and Teske. 

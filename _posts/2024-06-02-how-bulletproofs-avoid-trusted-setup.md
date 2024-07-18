@@ -9,7 +9,7 @@ tags:
   - zk-SNARK
 ---
 
-When you are just entering into the ZKP realm, digging to zk-SNARKs protocols such as [Groth16](https://eprint.iacr.org/2016/260.pdf), [Plonk](https://eprint.iacr.org/2019/953), [Bulletproofs](https://eprint.iacr.org/2017/1066.pdf), etc, you may pose yourself questions as follows: 
+When you are just entering into the ZKP realm, digging into zk-SNARKs protocols such as [Groth16](https://eprint.iacr.org/2016/260.pdf), [Plonk](https://eprint.iacr.org/2019/953), [Bulletproofs](https://eprint.iacr.org/2017/1066.pdf), etc, you may pose yourself questions as follows: 
 
 
 1) `What is the trusted setup protocol?`
@@ -23,10 +23,10 @@ In the post ["What happened in the trusted setup phase of the Groth16 protocol?"
 
 ## A brief recall of zk-SNARKs
 
-To have a complete knowledge of ZKP and zk-SNARKs, I would recommend you to watch the [ZKP MOOC Lectures](https://youtu.be/A0oZVEXav24?si=gQYhw2BvpSCL-eTk)). Personally, I see that lecture 2 [Overview of Modern SNARK construction](https://youtu.be/bGEXYpt3sj0?si=u-PifZaH5K0JXoeI) and lecture 5 [The Plonk SNARK](https://youtu.be/A0oZVEXav24?si=IZ5EGMPZ5dvqF2Wp) provided a great introduction of modern zk-SNARKs. Another excellent resource for understanding `Groth16` protocol is [Rareskills' ZK book](https://www.rareskills.io/zk-book) (I implemented in Python lectures of this book in this [repo](https://github.com/dple/understanding-zkp/tree/master/groth16)).
+To have complete knowledge of ZKP and zk-SNARKs, I would recommend you watch the [ZKP MOOC Lectures](https://youtu.be/A0oZVEXav24?si=gQYhw2BvpSCL-eTk)). Personally, I see that lecture 2 [Overview of Modern SNARK construction](https://youtu.be/bGEXYpt3sj0?si=u-PifZaH5K0JXoeI) and lecture 5 [The Plonk SNARK](https://youtu.be/A0oZVEXav24?si=IZ5EGMPZ5dvqF2Wp) provided a great introduction to modern zk-SNARKs. Another excellent resource for understanding the `Groth16` protocol is [Rareskills' ZK book](https://www.rareskills.io/zk-book) (I implemented Python lectures of this book in this [repo](https://github.com/dple/understanding-zkp/tree/master/groth16)).
 This section will briefly summarize what I got from those lectures about zk_SNARKs.
 
-Give a `correctness of computation` problem. Let's say, there is a complex problem that you know its solution, for example, you know the shortest paths connecting all vertices in a very large graph, and you want to prove it the someone that your solution is correct without reaveal the actual solution. So, you need to build a ZK proof for your statement. To do so, you first transform it to an `arithmetic circuit` consisting of multiplication and addition gates as shown in the below picture (source: [ZKP MOOC Lecture 5](https://youtu.be/A0oZVEXav24?si=IZ5EGMPZ5dvqF2Wp)). 
+Give a `correctness of computation` problem. Let's say, there is a complex problem in which you know its solution, for example, you know the shortest paths connecting all vertices in a very large graph, and you want to prove the someone that your solution is correct without reavealing the actual solution. So, you need to build a ZK proof for your statement. To do so, you first transform it into an `arithmetic circuit` consisting of multiplication and addition gates as shown in the below picture (source: [ZKP MOOC Lecture 5](https://youtu.be/A0oZVEXav24?si=IZ5EGMPZ5dvqF2Wp)). 
 
 <img src="http://dple.github.io/images/arithmetic-circuit.png" 
   alt="Arithmetic Circuit" 
@@ -34,7 +34,7 @@ Give a `correctness of computation` problem. Let's say, there is a complex probl
   height="300" 
   style="display: block; margin: 0 auto" />
 
-Then, using an `arithmetization`, you will convert those circuits to a set of mathematical equations, a.k.a., `constraint system`. If you have been in the field long enough, you might be familiar with terms like `R1CS` (Rank-1 Constraint System), and `Plonkish` arithmetization, two different methods you can express algebraic circuits. In the next step, a tool such as QAP (`Quadratic Arithmetic Program`) will help you to transform that set of mathematical equations (or [Hadamard Product](https://en.wikipedia.org/wiki/Hadamard_product_(matrices))) into polynomials. The reason why we use polynomials is that a big matrix of many values can be equivalently represented by a polynomial, that then can be encrypted as a group element. Instead of committing your computation to a proof system, you just need to commit those polynomials. Which `polynomial commitment scheme` you use, is probably the *most important factor* deciding the efficiency of your ZKP system. 
+Then, using an `arithmetization`, you will convert those circuits to a set of mathematical equations, a.k.a., `constraint system`. If you have been in the field long enough, you might be familiar with terms like `R1CS` (Rank-1 Constraint System), and `Plonkish` arithmetization, two different methods you can express algebraic circuits. In the next step, a tool such as QAP (`Quadratic Arithmetic Program`) will help you to transform that set of mathematical equations (or [Hadamard Product](https://en.wikipedia.org/wiki/Hadamard_product_(matrices))) into polynomials. The reason why we use polynomials is that a big matrix of many values can be equivalently represented by a polynomial, that then can be encrypted as a group element. Instead of committing your computation to a proof system, you just need to commit those polynomials. Which `polynomial commitment scheme` you use, is probably the *most important factor* in deciding the efficiency of your ZKP system. 
 
 Based on underlying cryptographic primitives, modern polynomial commitment schemes can be classified as follows:
 
@@ -44,7 +44,7 @@ Based on underlying cryptographic primitives, modern polynomial commitment schem
 
 In this [post](https://dple.github.io/posts/2024/4/kzg-poly-commitment/), I introduced the KZG polynomial commitment scheme. 
 
-Finally, as mentioned in [ZKP MOOC Lecture 2](https://youtu.be/bGEXYpt3sj0?si=u-PifZaH5K0JXoeI), any polynomial IOP combines with a polynomial commitment scheme can form a public coin interactive argument (see below picture, source: [ZKP MOOC Lecture 5](https://youtu.be/A0oZVEXav24?si=IZ5EGMPZ5dvqF2Wp)), which can be converted to a non-interactive ZKP or zk-SNARK via the well-known [Fiat-Shamir transformation](https://link.springer.com/chapter/10.1007/3-540-47721-7_12). Furthermore, a SNARK protocol requires the *proof* to be *succinct* and the verification should be much more quickly than the computation itself. For instance, The original Plonk ZKP is a combination of Plonk IOP and the KZG polynomial commitment. [Halo 2](https://zcash.github.io/halo2/) ZKP system combines Plonk IOP and Bulletproofs-based polynomial commitment. 
+Finally, as mentioned in [ZKP MOOC Lecture 2](https://youtu.be/bGEXYpt3sj0?si=u-PifZaH5K0JXoeI), any polynomial IOP combined with a polynomial commitment scheme can form a public coin interactive argument (see below picture, source: [ZKP MOOC Lecture 5](https://youtu.be/A0oZVEXav24?si=IZ5EGMPZ5dvqF2Wp)), which can be converted to a non-interactive ZKP or zk-SNARK via the well-known [Fiat-Shamir transformation](https://link.springer.com/chapter/10.1007/3-540-47721-7_12). Furthermore, a SNARK protocol requires the *proof* to be *succinct* and the verification should be much more quickly than the computation itself. For instance, The original Plonk ZKP is a combination of Plonk IOP and the KZG polynomial commitment. [Halo 2](https://zcash.github.io/halo2/) ZKP system combines Plonk IOP and Bulletproofs-based polynomial commitment. 
 
 <img src="http://dple.github.io/images/IOP+Poly-commitment.png" 
   alt="Arithmetic Circuit" 
@@ -67,11 +67,11 @@ The Bulletproofs protocol was introduced by Benedikt Bünz, Jonathan Bootle, Dan
 
 Bulletproofs was originally known as a `range proof` protocol (proving that a value $v$ lies within a certain range without revealing the value itself, i.e., $0 \le v \le 2^n$), it was then adapted to an efficient zero-knowledge argument for arbitrary `arithmetic circuits`, a.k.a, any computations. 
 
-Bulletproofs protocol produces a proof of size $\mathcal{O}(log \|C\|)$ and verification time asymtotically requires $\mathcal{O}(\|C\|)$, where $C$ is the size of gates of the computation. These asymtotic complexities are actually pretty big compared to other zk-SNARKs protocols such as [Groth16](https://eprint.iacr.org/2016/260.pdf) or [Plonk-KZG](https://eprint.iacr.org/2019/953), in which those values are $\mathcal{O}(1)$. 
+Bulletproofs protocol produces a proof of size $\mathcal{O}(log \|C\|)$ and verification time asymptotically requires $\mathcal{O}(\|C\|)$, where $C$ is the size of gates of the computation. These asymptotic complexities are actually pretty big compared to other zk-SNARKs protocols such as [Groth16](https://eprint.iacr.org/2016/260.pdf) or [Plonk-KZG](https://eprint.iacr.org/2019/953), in which those values are $\mathcal{O}(1)$. 
 
-## How Bulletproofs works?
+## How do Bulletproofs work?
 
-Two important building blocks in the Bulletproofs protocol are [Pedersen vector commitment](https://zcash.github.io/halo2/background/groups.html) and `Inner Product Argument` (IPA). Vitalik prodived a very good high-level explanation of IPA in this [post](https://vitalik.eth.limo/general/2021/11/05/halo.html). I won't recall details of these two cryptographic techniques here as many online resources available if you google them. Here I just briefly recall how they are used in the Bulletproofs to prove that a value $v$ belongs to a range $[0, 2^n - 1]$. I would refer readers to the paper [Bulletproofs: Short Proofs for Confidential Transactions and More](https://eprint.iacr.org/2017/1066.pdf) for the detailed technical description.  
+Two important building blocks in the Bulletproofs protocol are [Pedersen vector commitment](https://zcash.github.io/halo2/background/groups.html) and `Inner Product Argument` (IPA). Vitalik provided a very good high-level explanation of IPA in this [post](https://vitalik.eth.limo/general/2021/11/05/halo.html). I won't recall details of these two cryptographic techniques here as many online resources are available if you _Google_ them. Here I just briefly recall how they are used in the Bulletproofs to prove that a value $v$ belongs to a range $[0, 2^n - 1]$. I would refer readers to the paper [Bulletproofs: Short Proofs for Confidential Transactions and More](https://eprint.iacr.org/2017/1066.pdf) for the detailed technical description.  
 
 ### Inner-Product Argument
 Given two vectors $\mathbf{a}, \mathbf{b} \in \mathbb{Z}_p^n$ of size $n$. Bulletproofs introduced an efficient algorithm to calculate an IPA for the below relation:
