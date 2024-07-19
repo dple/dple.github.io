@@ -20,7 +20,9 @@ Here are some professional activities I am involved:
 - *Member* of [IACR](https://www.iacr.org/)
 - *Member* of [ISC2](https://www.isc2.org/), Certified Information Systems Security Professional, (CISSP) member: #612852
 
-My updated resume is [here](https://dple.github.io/files/Phong_CV.pdf)
+My updated resume is [here](https://dple.github.io/files/Phong_CV.pdf).
+
+
 <!--- 
 Before joining the Bank of Canada, I was 
 
