@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am a Cryptographer at the Fintech team, [Bank of Canada](https://www.bankofcanada.ca/), working on the Central Bank Digital Currencies (CBDC) project with a focus on Security and Privacy of digital currencies. I received a Ph.D degree in applied cryptography at University of Pau et des Pays de l'Adour under the supervisor of Professor [Alban Gabillon](https://www.upf.pf/fr/alban-gabillon) and Professor [Alexis Bonnecaze](https://alexis-bonnecaze.pedaweb.univ-amu.fr/extranet/). 
+I am currently working as a Software Developer at the [Nokia](https://www.nokia.com/). I received a Ph.D degree in applied cryptography at University of Pau et des Pays de l'Adour under the supervisor of Professor [Alban Gabillon](https://www.upf.pf/fr/alban-gabillon) and Professor [Alexis Bonnecaze](https://alexis-bonnecaze.pedaweb.univ-amu.fr/extranet/). 
 
 ## Professional Activities
 
